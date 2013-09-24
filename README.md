@@ -1,4 +1,4 @@
-bitality
+gitality
 ========
 
 Django Dash participation
