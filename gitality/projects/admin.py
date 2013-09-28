@@ -5,7 +5,7 @@ from .models import Project
 
 class ProjectAdmin(admin.ModelAdmin):
 
-    pass
+    list_select_related = True
 
 
 admin.site.register(Project, ProjectAdmin)

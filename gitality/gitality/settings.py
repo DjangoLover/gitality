@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'core',
     'projects',
     'commits',
+    'progresses',
 
     # Third-party
     'social_auth',

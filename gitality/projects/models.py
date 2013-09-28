@@ -6,10 +6,12 @@ from autoslug import AutoSlugField
 from south.modelsinspector import add_introspection_rules
 from uuslug import slugify
 
+from core.models import TimeStampedModel
+
 add_introspection_rules([], ['^autoslug\.AutoSlugField'])
 
 
-class Project(models.Model):
+class Project(TimeStampedModel):
     """
     Represents project object.
     """
@@ -29,12 +31,7 @@ class Project(models.Model):
         related_name='projects'
     )
 
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        get_latest_by = 'created'
-        ordering = ['-created']
+    class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'project')
         verbose_name_plural = _(u'projects')
 

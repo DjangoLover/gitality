@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from core.models import TimeStampedModel
 
-class CommitAuthor(models.Model):
+
+class CommitAuthor(TimeStampedModel):
     """
     Represents commit (owner) author object.
     """
@@ -18,11 +20,7 @@ class CommitAuthor(models.Model):
     followers = models.BigIntegerField(_(u'followers count'), default=0)
     following = models.BigIntegerField(_(u'following count'), default=0)
 
-    created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        get_latest_by = 'created'
-        ordering = ['-created']
+    class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'commit author')
         verbose_name_plural = _(u'commit authors')
 
@@ -30,7 +28,7 @@ class CommitAuthor(models.Model):
         return u'{}'.format(self.name or self.login)
 
 
-class Commit(models.Model):
+class Commit(TimeStampedModel):
     """
     Represents commit object.
     """
@@ -46,11 +44,8 @@ class Commit(models.Model):
 
     author = models.ForeignKey(CommitAuthor, related_name='commits')
     project = models.ForeignKey('projects.Project', related_name='commits')
-    created = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        get_latest_by = 'created'
-        ordering = ['-created']
+    class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'commit')
         verbose_name_plural = _(u'commits')
 
