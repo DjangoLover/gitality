@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="ui fixed monkey main menu inverted">
   <div class="menu-inner">
     <a class="item logo">
@@ -5,11 +7,24 @@
     </a>
     {% if user.is_authenticated %}
     <a class="item" href="{% url "projects:project_create" %}">
-      <i class="add icon"></i> Create
+      <i class="add icon"></i> {% trans "Create" %}
     </a>
     {% endif %}
     <a class="item" href="{% url "projects:project_list" %}">
-      <i class="list icon"></i> Projects
+      <i class="list icon"></i> {% trans "Projects" %}
+    </a>
+    {% if user.is_authenticated %}
+    <div class="ui dropdown item visible right">
+      <i class="user icon"></i> {{ user.username }} <i class="dropdown icon"></i>
+      <div style="animation-duration: 250ms;" class="menu ui transition visible animating slide down out">
+        <a class="item" href="#">{% trans "Profile" %}</a>
+        <a class="item" href="{% url "logout" %}">{% trans "Logout" %}</a>
+      </div>
+    </div>
+    {% else %}
+    <a class="item right" href="{% url "socialauth_begin" "github" %}">
+      <i class="github icon"></i> {% trans "Sign in" %}
+    {% endif %}
     </a>
   </div>
 </div>
