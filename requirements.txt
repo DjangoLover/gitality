@@ -7,3 +7,5 @@ django-social-auth==0.7.28
 ipdb==0.8
 psycopg2==2.5.1
 unidecode
+requests
+github3

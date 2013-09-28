@@ -149,6 +149,9 @@ LOGGING = {
     }
 }
 
+GITHUB_BOT_NAME = 'gitalitybot'
+GITHUB_BOT_PASSWORD = 'gitalitybot1'
+
 # Loading local settings
 try:
     from local_settings import *
