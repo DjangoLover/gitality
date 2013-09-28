@@ -22,6 +22,6 @@ class ProjectForm(forms.ModelForm):
         domain, path_fragments = parsed.netloc, filter(None, parsed.path.split('/'))
         if domain != 'github.com' or len(path_fragments) != 2:
             raise forms.ValidationError(_(u'Wrong GitHub repo URL'))
-        # Truncate .git extension if repo name
+        # Truncate .git extension in repo name
         path_fragments[-1] = path_fragments[-1].replace('.git', '')
         return '{0}://{1}/{2}/{3}'.format(parsed.scheme, domain, *path_fragments)
