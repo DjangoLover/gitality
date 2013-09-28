@@ -24,7 +24,7 @@ body {
 }
 .main.menu .menu-inner,
 .content-wrapper,
-.content {
+.page-content {
     width: 60%;
     margin: 0 auto;
     min-width: 1024px;
@@ -33,7 +33,7 @@ body {
     width: 100%;
     background-color: #f4f4f2;
 }
-.content {
+.page-content {
     padding: 15px;
     box-sizing: border-box;
 }
@@ -59,4 +59,7 @@ body {
 }
 .ui.button:hover {
     opacity: .8!important;
+}
+.projects-list a {
+    text-decoration: none!important;
 }

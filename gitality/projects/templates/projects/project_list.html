@@ -5,11 +5,14 @@
 {% block title %}{% trans "Project List" %} &#124; {{ block.super }}{% endblock title %}
 
 {% block content %}
-
-<ul>
-{% for project in project_list %}
-<li><a href="{{ project.get_absolute_url }}">{{ project.name }}</a></li>
-{% endfor %}
-</ul>
-
+<div class="ui selection list projects-list">
+  {% for project in project_list %}
+    <a class="item" href="{{ project.get_absolute_url }}">
+      <i class="github icon large"></i>
+      <div class="content">
+        <div class="header">{{ project.name }}</div>{{ project.repo_url }}
+      </div>
+    </a>
+  {% endfor %}
+</div>
 {% endblock content %}
