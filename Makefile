@@ -112,3 +112,6 @@ seed_production:
 collectstatic:
 	@echo "$(BLUE)$(PREFIX) Collecting static files$(BE)"
 	@$(DJANGO) collectstatic -v 0 --noinput
+
+test:
+	@$(DJANGO) test --settings=gitality.settings_test

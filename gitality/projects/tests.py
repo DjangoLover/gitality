@@ -1,16 +1,16 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+from django.test import SimpleTestCase
 
-Replace this with more appropriate tests for your application.
-"""
-
-from django.test import TestCase
+from .forms import ProjectForm
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+class ProjectFormTest(SimpleTestCase):
+
+    def test_repo_url_validation(self):
+        post_data = {
+            'name': 'Gitality',
+            'repo_url': 'https://github.com/dmrz/gitality.git'
+        }
+        form = ProjectForm(post_data)
+        self.assertTrue(form.is_valid())
+        post_data['repo_url'] = post_data['repo_url'].replace('github', 'othersite')
+        self.assertFalse(form.is_valid())

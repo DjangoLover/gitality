@@ -40,6 +40,7 @@ nosetests.xml
 local_settings.py
 .down
 .reload
+.noseids
 
 gitality/static
 gitality/media

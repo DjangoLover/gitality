@@ -1,12 +1,15 @@
 Django==1.5.4
 Fabric==1.8.0
 South==0.8.2
+coverage==3.6
 django-annoying==0.7.7
 django-autoslug==1.7.1
 django-debug-toolbar==0.9.4
+django-nose==1.2
 django-postgrespool==0.2.4
 django-social-auth==0.7.28
 django-uuslug==1.0.0
 ipdb==0.8
+pinocchio==0.3.1
 psycopg2==2.5.1
 unidecode
