@@ -4,10 +4,7 @@ from .exceptions import DeliberateError
 
 
 def home(request):
-    context = {
-
-    }
-    return render(request, 'core/index.html', context)
+    return render(request, 'core/index.html')
 
 
 def login(request):
