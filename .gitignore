@@ -33,3 +33,13 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+*.sublime-*
+.ropeproject
+*.db
+local_settings.py
+.down
+.reload
+
+gitality/static
+gitality/media

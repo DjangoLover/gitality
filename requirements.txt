@@ -1,0 +1,8 @@
+Django==1.5.4
+Fabric==1.8.0
+South==0.8.2
+django-debug-toolbar==0.9.4
+django-postgrespool==0.2.4
+django-social-auth==0.7.28
+ipdb==0.8
+psycopg2==2.5.1
