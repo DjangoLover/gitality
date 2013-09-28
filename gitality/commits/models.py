@@ -45,6 +45,7 @@ class Commit(models.Model):
     last_modified = models.DateTimeField(_(u'commit last modified'))
 
     author = models.ForeignKey(CommitAuthor, related_name='commits')
+    project = models.ForeignKey('projects.Project', related_name='commits')
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
