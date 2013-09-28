@@ -100,6 +100,7 @@ def deploy():
 
     git_pull()
 
+    make('requirements')
     make('syncdb')
     make('migrate')
     make('seed_production')
