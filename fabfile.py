@@ -1,34 +1,40 @@
-import os
+from ConfigParser import RawConfigParser
 
-from fabric.api import cd, env, run
+from fabric.api import cd, env, run, shell_env
 from fabric.colors import green
 from fabric.contrib.files import exists
 from fabric.utils import puts
 
 
-env.hosts = ['production@gitality.com']
+config = RawConfigParser()
 
-env.project_name = 'gitality'
+with open('deploy/config.ini') as f:
+    config.readfp(f)
+
+env.host_string = config.get('fabric_env', 'host_string')
+
+env.project_name = config.get('fabric_env', 'project_name')
 env.project_db_name = env.project_name
 
-env.project_home = '/srv/production/projects'
-env.project_root_dirname = 'gitality.com'
+env.project_home = config.get('fabric_env', 'project_home')
+env.project_root_dirname = config.get('fabric_env', 'project_root_dirname')
 env.project_root = '{0.project_home}/{0.project_root_dirname}'.format(env)
 
-env.virtualenv_root = '{0}/{1.project_name}'.format(os.environ['WORKON_HOME'], env)
+env.virtualenv_home = config.get('fabric_env', 'virtualenv_home')
+env.virtualenv_root = '{0.virtualenv_home}/{0.project_name}'.format(env)
 env.virtualenv_activate_command = 'source {.virtualenv_root}/bin/activate'.format(env)
 
 env.site_down_file = '.down'
 env.touch_reload_file = '.reload'
 
-env.git_repository = 'git@github.com:dmrz/gitality.git'
+env.git_repository = config.get('fabric_env', 'git_repository')
 
 
 def prun(command):
     """
     Runs command from project root directoy.
     """
-    with cd(env.project_root):
+    with cd(env.project_root), shell_env(WORKON_HOME=env.virtualenv_home):
         run(command)
 
 
@@ -36,7 +42,7 @@ def make(target):
     """
     Invokes Makefile target.
     """
-    prun(target)
+    prun('make {}'.format(target))
 
 
 def supervisorctl(action, program='',  options=''):
