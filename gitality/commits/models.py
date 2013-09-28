@@ -48,10 +48,10 @@ class Commit(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        get_lates_by = 'created'
+        get_latest_by = 'created'
         ordering = ['-created']
         verbose_name = _(u'commit')
-        verbose_names = _(u'commits')
+        verbose_name_plural = _(u'commits')
 
     def __unicode__(self):
         return u'{0}: {1}'.format(self.author, self.message)
