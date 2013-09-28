@@ -43,3 +43,4 @@ local_settings.py
 
 gitality/static
 gitality/media
+deploy/config.ini
