@@ -10,7 +10,22 @@
 {% endif %}
 <form method="post", action="{{ submit_url }}">
     {% csrf_token %}
-    {{ form.as_p }}
-    <p><input type="submit" value="{% trans "Submit" %}"></p>
+    <div class="ui form segment">
+      <div class="field">
+        <label>Repo name</label>
+        <div class="ui left labeled icon input">
+          {{ form.name }}
+          <i class="tag icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Repo url</label>
+        <div class="ui left labeled icon input">
+          {{ form.name }}
+          <i class="url icon"></i>
+        </div>
+      </div>
+      <div class="ui monkey submit button">{% trans "Submit" %}</div>
+    </div>
 </form>
 {% endblock content %}

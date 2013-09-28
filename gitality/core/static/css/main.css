@@ -20,6 +20,7 @@ body {
 }
 .monkey {
     background-color: #f36966!important;
+    color: #ffffff!important;
 }
 .main.menu .menu-inner,
 .content-wrapper,
@@ -41,4 +42,10 @@ body {
 }
 #top-menu .menu .item {
     color: #ffffff!important;
+}
+.button.monkey {
+    opacity: .9!important;
+}
+.button.monkey:hover {
+    opacity: 1;
 }
