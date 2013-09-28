@@ -12,7 +12,7 @@
     {% csrf_token %}
     <div class="ui form segment">
       <div class="field">
-        <label>Repo name</label>
+        <label>Project Name</label>
         <div class="ui left labeled icon input{% if form.name.errors %} error{% endif %}">
           {{ form.name }}
           <i class="tag icon"></i>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="field">
-        <label>Repo url</label>
+        <label>Publicly accessible GitHub repo URL</label>
         <div class="ui left labeled icon input{% if form.repo_url.errors %} error{% endif %}">
           {{ form.repo_url }}
           <i class="url icon"></i>
@@ -38,7 +38,7 @@
       <div class="ui buttons">
         <input type="submit" class="ui positive button small" id="js-create-proj" value="{% trans "Submit" %}"/>
         <div class="or custom"></div>
-        <a class="ui button small" href="{% url 'home' %}">{% trans "Cancel" %}</a>
+        <a class="ui button small" id="js-cancel-proj">{% trans "Cancel" %}</a>
       </div>
     </div>
 </form>
