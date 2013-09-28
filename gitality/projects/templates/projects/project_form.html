@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+{% if project %}
+    {% url "projects:project_update" task.pk as submit_url %}
+{% else %}
+    {% url "projects:project_update" as submit_url %}
+{% endif %}
+<form method="post", action="{{ submit_url }}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="{% trans "Submit" %}"></p>
+</form>
+{% endblock content %}

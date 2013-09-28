@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ project.name }} &#124; {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+<h3>{{ project.name }}</h3>
+
+<p>{{ project.repo_url|urlize }}</p>
+
+{% endblock content %}

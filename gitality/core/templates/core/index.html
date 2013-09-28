@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
-{% load static from staticfiles %}
 
-
-{% block title %}Home{% endblock title %}
-
-{% block extra_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
-{% endblock extra_css %}
+{% block title %}Home &#124; {{ block.super }}{% endblock title %}
 
 {% block content %}
     <p>Blah</p>
