@@ -5,7 +5,7 @@ from .models import Commit, CommitAuthor
 
 class CommitAdmin(admin.ModelAdmin):
 
-    pass
+    list_select_related = True
 
 
 class CommitAuthorAdmin(admin.ModelAdmin):
