@@ -19,8 +19,9 @@ class Project(models.Model):
 
     repo_url = models.URLField(
         _('repo url'),
+        help_text=_(u'Publicly accessible GitHub repo URL'),
         max_length=256,
-        help_text=_(u'Publicly accessible GitHub repo URL')
+        unique=True
     )
 
     user = models.ForeignKey(

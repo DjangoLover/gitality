@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'gitality.views.home', name='home'),
     # url(r'^gitality/', include('gitality.foo.urls')),
     url(r'^$', 'core.views.home', name='home'),
+    url(r'^auth/', include('social_auth.urls')),
     url(r'^projects/', include('projects.urls', namespace='projects')),
     url(r'^admin/', include(admin.site.urls)),
 )
