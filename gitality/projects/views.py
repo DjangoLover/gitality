@@ -32,19 +32,17 @@ class ProjectDetailView(DetailView):
 project_detail = ProjectDetailView.as_view()
 
 
-class ProjectCreateView(LoginRequiredMixin, ExcludeFormMixin, UserFormMixin, CreateView):
+class ProjectCreateView(LoginRequiredMixin, UserFormMixin, CreateView):
 
     form_class = ProjectForm
     model = Project
-    exclude_form_fields = ('user',)
 
 project_create = ProjectCreateView.as_view()
 
 
-class ProjectUpdateView(LoginRequiredMixin, ExcludeFormMixin, UserFormMixin, UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UserFormMixin, UpdateView):
 
     form_class = ProjectForm
     model = Project
-    exclude_form_fields = ProjectCreateView.exclude_form_fields
 
 project_update = ProjectUpdateView.as_view()
