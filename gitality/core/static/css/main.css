@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffd464;
+    font-family: sans-serif;
+    padding-top: 48px;
+    /*color: #1253a3;*/
+}
+.main.menu {
+    left: 0;
+    top: 0;
+}
+.main.menu .item {
+    height: 3em;
+}
+.item.logo h2 {
+    margin: 0;
+}
+.monkey {
+    background-color: #f36966!important;
+}
+.main.menu .menu-inner,
+.content-wrapper,
+.content {
+    width: 60%;
+    margin: 0 auto;
+    min-width: 1024px;
+}
+.content-wrapper {
+    width: 100%;
+    background-color: #f4f4f2;
+}
+.content {
+    padding: 15px;
+    box-sizing: border-box;
+}

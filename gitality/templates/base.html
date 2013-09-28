@@ -15,9 +15,13 @@
 
   <body>
 
+    {% include 'menu.html' %}
+
     <div class="content-wrapper">
-      {% block content %}
-      {% endblock content %}
+      <div class="content">
+        {% block content %}
+        {% endblock content %}
+      </div>
     </div>
 
     <footer>
