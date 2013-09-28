@@ -13,6 +13,9 @@ body {
 .main.menu .item {
     height: 3em;
 }
+.item {
+    line-height: 20px!important;
+}
 .item.logo h2 {
     margin: 0;
 }
