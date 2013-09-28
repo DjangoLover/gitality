@@ -40,6 +40,10 @@ requirements:
 	@echo "$(BLUE)$(PREFIX) Installing requirements$(BE)"
 	@$(PIP) install -qr requirements.txt -U
 
+scrapy_requirements:
+	@echo "$(BLUE)$(PREFIX) Installing Scrapy requirements$(BE)"
+	@$(PIP) install -qr scripts/scraper/requirements.txt -U
+
 db: syncdb migrate seed
 
 syncdb:

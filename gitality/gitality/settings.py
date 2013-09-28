@@ -115,7 +115,7 @@ INSTALLED_APPS = (
 
     # Third-party
     'south',
-    'core',
+    'core'
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
