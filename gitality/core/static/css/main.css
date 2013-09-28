@@ -71,3 +71,6 @@ a:hover {
 .projects-list a {
     text-decoration: none!important;
 }
+.custom.or {
+    height: .75em!important;
+}
