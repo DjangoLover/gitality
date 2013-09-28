@@ -46,6 +46,17 @@ body {
 .button.monkey {
     opacity: .9!important;
 }
-.button.monkey:hover {
-    opacity: 1;
+.ui.positive.button {
+    background-color: #f36966!important;
+    color: #ffffff!important;
+}
+.ui.button {
+    background-color: #ffd464!important;
+    color: #ffffff!important;
+}
+.ui.positive.button:hover {
+    background-color: #f36966!important;
+}
+.ui.button:hover {
+    opacity: .8!important;
 }
