@@ -10,7 +10,8 @@ DATABASES = {
         'ENGINE': 'django_postgrespool',
         'NAME': 'gitality',
         'USER': 'production',
-        'PASSWORD': 'production'
+        'PASSWORD': 'production',
+        'HOST': 'localhost'
     }
 }
 

@@ -1,10 +1,15 @@
 <div class="ui fixed monkey main menu inverted">
   <div class="menu-inner">
-    <a class="item logo">
+    <a class="item logo" href="{% url "home" %}">
       <h2>Gitality</h2>
     </a>
-    <a class="active item">
-      <i class="user icon"></i> Friends
+    {% if user.is_authenticated %}
+    <a class="item" href="{% url "projects:project_create" %}">
+      <i class="add icon"></i> Create
+    </a>
+    {% endif %}
+    <a class="item" href="{% url "projects:project_list" %}">
+      <i class="list icon"></i> Projects
     </a>
   </div>
 </div>
