@@ -1,0 +1,20 @@
+[
+{
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+        "username": "gitalitybot",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2013-09-28T15:57:32.572Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "!",
+        "email": "",
+        "date_joined": "2013-09-28T15:57:32.523Z"
+    }
+}
+]
