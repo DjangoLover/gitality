@@ -160,7 +160,6 @@ LOGGING = {
         },
     }
 }
-
 GITHUB_BOT_NAME = 'gitalitybot'
 GITHUB_BOT_PASSWORD = 'gitalitybot1'
 
