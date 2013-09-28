@@ -15,7 +15,12 @@ class ProjectFormTest(SimpleTestCase):
         form = ProjectForm(post_data)
         self.assertTrue(form.is_valid())
 
+        # Check that .git part is truncated
+        self.assertEqual(form.cleaned_data['repo_url'], post_data['repo_url'].replace('.git', ''))
+
         # Invalid repo url
         post_data['repo_url'] = post_data['repo_url'].replace('github', 'othersite')
         form = ProjectForm(post_data)
         self.assertFalse(form.is_valid())
+
+        self.assertIn('repo_url', form.errors)
