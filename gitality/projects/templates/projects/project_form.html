@@ -8,7 +8,7 @@
 {% else %}
     {% url "projects:project_update" as submit_url %}
 {% endif %}
-<form method="post", action="{{ submit_url }}">
+<form method="post", action="{{ submit_url }}" class="create-proj-form">
     {% csrf_token %}
     <div class="ui form segment">
       <div class="field">
@@ -26,9 +26,9 @@
         </div>
       </div>
       <div class="ui buttons">
-        <div class="ui positive button small">{% trans "Submit" %}</div>
+        <div class="ui positive button small" id="js-create-proj">{% trans "Submit" %}</div>
         <div class="or custom"></div>
-        <div class="ui button small">{% trans "Cancel" %}</div>
+        <a class="ui button small" href="{% url 'home' %}">{% trans "Cancel" %}</a>
       </div>
     </div>
 </form>
