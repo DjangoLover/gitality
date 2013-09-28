@@ -4,7 +4,6 @@ body {
     background-color: #ffd464;
     font-family: sans-serif;
     padding-top: 48px;
-    /*color: #1253a3;*/
 }
 .main.menu {
     left: 0;
@@ -36,4 +35,10 @@ body {
 .content {
     padding: 15px;
     box-sizing: border-box;
+}
+#top-menu .menu {
+    background-color: #f36966!important;
+}
+#top-menu .menu .item {
+    color: #ffffff!important;
 }

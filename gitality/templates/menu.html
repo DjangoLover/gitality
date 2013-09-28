@@ -14,9 +14,10 @@
       <i class="list icon"></i> {% trans "Projects" %}
     </a>
     {% if user.is_authenticated %}
-    <div class="ui dropdown item visible right">
-      <i class="user icon"></i> {{ user.username }} <i class="dropdown icon"></i>
-      <div style="animation-duration: 250ms;" class="menu ui transition visible animating slide down out">
+    <div class="ui dropdown link item right" id="top-menu">
+      <img class="ui mini avatar image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+      {{ user.username }} <i class="dropdown icon"></i>
+      <div class="menu ui transition hidden">
         <a class="item" href="#">{% trans "Profile" %}</a>
         <a class="item" href="{% url "logout" %}">{% trans "Logout" %}</a>
       </div>
