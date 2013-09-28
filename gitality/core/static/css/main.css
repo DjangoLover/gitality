@@ -4,6 +4,14 @@ body {
     background-color: #ffd464;
     font-family: sans-serif;
     padding-top: 48px;
+    color: #555555!important;
+}
+a {
+    color: #555555;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
 }
 .main.menu {
     left: 0;
