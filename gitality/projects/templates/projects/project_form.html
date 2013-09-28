@@ -8,27 +8,37 @@
 {% else %}
     {% url "projects:project_update" as submit_url %}
 {% endif %}
-<form method="post", action="{{ submit_url }}">
+<form method="post", action="{{ submit_url }}" class="create-proj-form">
     {% csrf_token %}
     <div class="ui form segment">
       <div class="field">
         <label>Repo name</label>
-        <div class="ui left labeled icon input">
+        <div class="ui left labeled icon input{% if form.name.errors %} error{% endif %}">
           {{ form.name }}
           <i class="tag icon"></i>
+          {% if form.name.errors %}
+            <div class="ui red pointing above ui label">
+              {% for err in form.name.errors %}{{ err }}<br>{% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
       <div class="field">
         <label>Repo url</label>
-        <div class="ui left labeled icon input">
+        <div class="ui left labeled icon input{% if form.repo_url.errors %} error{% endif %}">
           {{ form.repo_url }}
           <i class="url icon"></i>
+          {% if form.repo_url.errors %}
+            <div class="ui red pointing above ui label">
+              {% for err in form.repo_url.errors %}{{ err }}<br>{% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
       <div class="ui buttons">
-        <div class="ui positive button small">{% trans "Submit" %}</div>
+        <input type="submit" class="ui positive button small" id="js-create-proj" value="{% trans "Submit" %}"/>
         <div class="or custom"></div>
-        <div class="ui button small">{% trans "Cancel" %}</div>
+        <a class="ui button small" href="{% url 'home' %}">{% trans "Cancel" %}</a>
       </div>
     </div>
 </form>
