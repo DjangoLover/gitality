@@ -1,0 +1,2 @@
+class DeliberateError(Exception):
+    pass
