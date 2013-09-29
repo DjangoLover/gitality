@@ -8,9 +8,9 @@ from achievements.models import (
 
 
 def home(request):
-    latest_comitauthor = CommitAuthorAchievement.objects.order_by('created')
-    # latest_comit = CommitAchievement.objects.order_by('created')
-    latest_proj = ProjectAchievement.objects.order_by('created')
+    latest_comitauthor = CommitAuthorAchievement.objects.all()
+    # latest_comit = CommitAchievement.objects.all()
+    latest_proj = ProjectAchievement.objects.all()
     context = {
         'latest_comitauthor': latest_comitauthor[:20],
         # 'latest_comit': latest_comit[:20],
