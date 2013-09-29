@@ -13,6 +13,9 @@
     <a class="item" href="{% url "projects:project_list" %}">
       <i class="list icon"></i> {% trans "Projects" %}
     </a>
+    <div class="item">
+      Motivating opensource.
+    </div>
     {% if user.is_authenticated %}
     <div class="ui dropdown link item right" id="top-menu">
       <i class="icon user"></i>
