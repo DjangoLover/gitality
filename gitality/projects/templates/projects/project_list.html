@@ -27,13 +27,13 @@
   {% endif %}
   {% for i in paginator.page_range %}
     {% if i < page_obj.number %}
-      <a class="item">{{ i }}</a>
+      <a class="item" href="?page={{ i }}">{{ i }}</a>
     {% endif %}
   {% endfor %}
   <a class="item active active-page">{{ page_obj.number }}</a>
   {% for i in paginator.page_range %}
     {% if i > page_obj.number %}
-      <a class="item">{{ i }}</a>
+      <a class="item" href="?page={{ i }}">{{ i }}</a>
     {% endif %}
   {% endfor %}
   {% if page_obj.has_next %}
