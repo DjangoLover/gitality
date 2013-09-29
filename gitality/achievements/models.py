@@ -63,3 +63,68 @@ class Achievement(TimeStampedModel):
         """
         return {kv.key: kv.value for kv in
                 self.requirements.only('key', 'value_raw')}
+
+
+class EntityAchievementModel(TimeStampedModel):
+    """
+    Base entity achievement model class.
+    """
+
+    achievement = models.ForeignKey(Achievement)
+
+    class Meta(TimeStampedModel.Meta):
+        abstract = True
+
+
+class CommitAchievement(EntityAchievementModel):
+    """
+    Represents unlocked achievement by commit
+    """
+
+    commit = models.ForeignKey('commits.Commit', related_name='achievements')
+
+    class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'commit')
+        verbose_name = _(u'commit achievement')
+        verbose_name_plural = _(u'commit achievements')
+
+    def __unicode__(self):
+        return u'Commit achievement {0} for {1}'.format(self.achievement, self.commit)
+
+
+class CommitAuthorAchievement(EntityAchievementModel):
+    """
+    Represents unlocked achievement by commit author
+    """
+
+    author = models.ForeignKey('commits.CommitAuthor', related_name='achievements')
+
+    class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'author')
+        verbose_name = _(u'commit author achievement')
+        verbose_name_plural = _(u'commit author achievements')
+
+    def __unicode__(self):
+        return u'Commit author achievement {0} for {1}'.format(
+            self.achievement,
+            self.author
+        )
+
+
+class ProjectAchievement(EntityAchievementModel):
+    """
+    Represents unlocked achievement by project
+    """
+
+    project = models.ForeignKey('projects.Project', related_name='achievements')
+
+    class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'project')
+        verbose_name = _(u'project achievement')
+        verbose_name_plural = _(u'project achievements')
+
+    def __unicode__(self):
+        return u'Project achievement {0} for {1}'.format(
+            self.achievement,
+            self.project
+        )
