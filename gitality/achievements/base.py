@@ -1,5 +1,10 @@
 import abc
 
+import logging
+
+
+logger = logging.getLogger('achievements')
+
 
 class BaseAchievementLogic(object):
     """
@@ -23,8 +28,13 @@ class BaseAchievementLogic(object):
         fields meet achievement requirements.
         """
 
+        logger.info('Inspecting achievement {0} for {1}'.format(
+            self.achievement, entity))
+
         for key, value in self.get_requirements().iteritems():
             if not entity.progress.check_requirement(key, value):
+                logger.info('Achievement {0} is not unlocked for {1}'.format(
+                    self.achievement, entity))
                 return
 
         self.unlock(entity)
@@ -36,3 +46,6 @@ class BaseAchievementLogic(object):
         # Creating entity achievement if not exists
         if not entity.achievements.filter(achievement=self.achievement).exists():
             entity.achievements.create(achievement=self.achievement)
+            logger.info('Achievement {0} unlocked by {1}'.format(
+                self.achievement,
+                entity))

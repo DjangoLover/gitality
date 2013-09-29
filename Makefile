@@ -57,6 +57,7 @@ migrate:
 seed:
 	@echo "$(BLUE)$(PREFIX) Seeding database with additional fixtures$(BE)"
 	@$(DJANGO) loaddata -v 0 $(FIXTURES_DIR)/dev/*
+	@$(DJANGO) loaddata -v 0 $(FIXTURES_DIR)/common/*
 
 end:
 	@echo "$(BLUE)$(PREFIX) Project environment is ready. You can run it using $(MAGENTA)make run$(WHITE).$(BE)"
@@ -108,6 +109,7 @@ settings_production:
 seed_production:
 	@echo "$(BLUE)$(PREFIX) Seeding database with additional fixtures for production environment$(BE)"
 	@$(DJANGO) loaddata -v 0 $(FIXTURES_DIR)/prod/*
+	@$(DJANGO) loaddata -v 0 $(FIXTURES_DIR)/common/*
 
 collectstatic:
 	@echo "$(BLUE)$(PREFIX) Collecting static files$(BE)"

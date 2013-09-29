@@ -7,7 +7,7 @@ from core.utils import cached_property
 from progresses.signals import progress_state_changed
 
 from .engine import AchievementsEngine
-from .utils import get_logic_choices
+from .utils import get_logic_choices, get_class_by_path
 
 
 class Achievement(TimeStampedModel):
@@ -57,7 +57,8 @@ class Achievement(TimeStampedModel):
         """
         Returns achievement logic instance.
         """
-        return self.logic_class(self)
+        logic_class = get_class_by_path(self.logic_class)
+        return logic_class(self)
 
     @cached_property(ttl=0)
     def requirements_dict(self):

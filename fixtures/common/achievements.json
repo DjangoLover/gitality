@@ -1,0 +1,316 @@
+[
+{
+    "pk": 1, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Starting commiter", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:21:44.315Z", 
+        "modified": "2013-09-29T15:21:44.315Z", 
+        "points": 1, 
+        "key": "commit1", 
+        "requirements": [
+            10
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 2, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Passed First Ten!", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:23:48.518Z", 
+        "modified": "2013-09-29T15:23:48.518Z", 
+        "points": 2, 
+        "key": "commit10", 
+        "requirements": [
+            11
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 3, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Got Fifty!", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:24:08.078Z", 
+        "modified": "2013-09-29T15:24:08.078Z", 
+        "points": 10, 
+        "key": "commit50", 
+        "requirements": [
+            13
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 4, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Creator", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:25:34.871Z", 
+        "modified": "2013-09-29T15:25:34.871Z", 
+        "points": 3, 
+        "key": "additions100", 
+        "requirements": [
+            1
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 5, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Writer", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:25:57.189Z", 
+        "modified": "2013-09-29T15:25:57.189Z", 
+        "points": 4, 
+        "key": "additions250", 
+        "requirements": [
+            2
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 6, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Getting Ready to Code", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:27:03.324Z", 
+        "modified": "2013-09-29T15:27:03.324Z", 
+        "points": 5, 
+        "key": "additions500", 
+        "requirements": [
+            3
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 7, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Coding Hard", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:27:22.954Z", 
+        "modified": "2013-09-29T15:27:22.954Z", 
+        "points": 10, 
+        "key": "additions2500", 
+        "requirements": [
+            5
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 8, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Cleaner", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:27:43.374Z", 
+        "modified": "2013-09-29T15:27:43.374Z", 
+        "points": 1, 
+        "key": "deletions100", 
+        "requirements": [
+            6
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 9, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Purifier", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:28:22.342Z", 
+        "modified": "2013-09-29T15:28:22.342Z", 
+        "points": 2, 
+        "key": "deletions250", 
+        "requirements": [
+            7
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 10, 
+    "model": "achievements.achievement", 
+    "fields": {
+        "logic_class": "achievements.logic.CommitCountLogic", 
+        "name": "Destroyer", 
+        "entity_type": 2, 
+        "created": "2013-09-29T15:28:44.744Z", 
+        "modified": "2013-09-29T15:28:44.744Z", 
+        "points": 3, 
+        "key": "deletions500", 
+        "requirements": [
+            8
+        ], 
+        "description": ""
+    }
+},
+{
+    "pk": 1, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "100", 
+        "key": "additions_count"
+    }
+},
+{
+    "pk": 2, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "250", 
+        "key": "additions_count"
+    }
+},
+{
+    "pk": 3, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "500", 
+        "key": "additions_count"
+    }
+},
+{
+    "pk": 4, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "1000", 
+        "key": "additions_count"
+    }
+},
+{
+    "pk": 5, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "2500", 
+        "key": "additions_count"
+    }
+},
+{
+    "pk": 6, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "100", 
+        "key": "deletions_count"
+    }
+},
+{
+    "pk": 7, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "250", 
+        "key": "deletions_count"
+    }
+},
+{
+    "pk": 8, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "500", 
+        "key": "deletions_count"
+    }
+},
+{
+    "pk": 9, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "1000", 
+        "key": "deletions_count"
+    }
+},
+{
+    "pk": 10, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "1", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 11, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "10", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 12, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "25", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 13, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "50", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 14, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "100", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 15, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "200", 
+        "key": "commit_count"
+    }
+},
+{
+    "pk": 16, 
+    "model": "core.kvs", 
+    "fields": {
+        "value_type": "int", 
+        "value_raw": "300", 
+        "key": "commit_count"
+    }
+}
+]
