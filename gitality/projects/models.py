@@ -1,3 +1,5 @@
+from itertools import chain
+from operator import attrgetter
 from urlparse import urlparse
 
 from django.conf import settings
@@ -9,6 +11,8 @@ from south.modelsinspector import add_introspection_rules
 from uuslug import slugify
 from github3 import login
 
+from achievements.models import CommitAuthorAchievement
+from commits.models import Commit, CommitAuthor
 from core.models import TimeStampedModel
 from core.utils import cached_property
 
@@ -80,3 +84,37 @@ class Project(TimeStampedModel):
         name list, e.g. [johndoe, coolrepo].
         """
         return filter(None, urlparse(self.repo_url).path.split('/'))
+
+    def get_project_authors(self):
+        """
+        Returns project authors
+        """
+        return CommitAuthor.objects.filter(commits__project=self).distinct()
+
+    def get_latest_achievements(self):
+        """
+        Returns latest project achievements
+        """
+
+        # TODO: Optimize!
+
+        # 20 latest project achievements
+        project_achievements = self.achievements.select_related('project')[:20]
+
+        # 20 latest commit author achievements
+        commit_author_achievements = CommitAuthorAchievement.objects.filter(
+            author__in=self.get_project_authors()).select_related('author')[:20]
+
+        latest_achievements = chain(project_achievements, commit_author_achievements)
+
+        # NOTE: Sorting by created field in descending order
+        return sorted(latest_achievements, key=attrgetter('created'), reverse=True)
+
+    def get_latest_commits(self):
+        """
+        Returns latest project commits
+        """
+        # 20 latest project commits
+        return Commit.objects.filter(
+            author__in=self.get_project_authors()
+        ).select_related('author').order_by('created')[:20]

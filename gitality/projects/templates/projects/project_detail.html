@@ -31,14 +31,14 @@
   <div class="nine wide column">
     <div class="ui small piled feed segment">
       <h5 class="ui header">Latest Achievements Unlocked</h5>
-      {% for commit in project.latest_commits %}
+      {% for achievement in project.get_latest_achievements %}
       <div class="event">
         <div class="label">
-          <img src="{{ commit.author.avatar_url }}">
+          <img src="{{ achievement.get_entity_avatar_url }}">
         </div>
         <div class="content">
           <div class="summary">
-            <a>{{ commit.author.login }}</a> unlocks some awesome achievement!
+            <a>{{ achievement.get_entity_name }}</a> unlocks {{ achievement.achievement.name }}!
             <i class="trophy icon"></i>
           </div>
         </div>
@@ -49,7 +49,7 @@
   <div class="seven wide column">
     <div class="ui small feed segment">
       <h5 class="ui header">Latest Commits</h5>
-      {% for commit in project.latest_commits %}
+      {% for commit in project.get_latest_commits %}
         <div class="event">
         <div class="content">
           <div class="summary">
