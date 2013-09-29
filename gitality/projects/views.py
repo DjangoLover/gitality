@@ -1,5 +1,3 @@
-from django.core.urlresolvers import reverse_lazy
-from django.db.models import Count
 from django.views.generic import (
     CreateView,
     DetailView,

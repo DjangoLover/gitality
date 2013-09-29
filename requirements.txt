@@ -4,6 +4,7 @@ South==0.8.2
 coverage==3.6
 django-annoying==0.7.7
 django-autoslug==1.7.1
+django-celery==3.0.23
 django-debug-toolbar==0.9.4
 django-dirtyfields==0.1
 django-factory-boy==0.1.6
@@ -12,11 +13,10 @@ django-postgrespool==0.2.4
 django-social-auth==0.7.28
 django-uuslug==1.0.0
 ipdb==0.8
+mock==1.0.1
 pinocchio==0.3.1
 psycopg2==2.5.1
-unidecode
-requests
+python-dateutil==2.1
+redis==2.8.0
+requests==2.0.0
 -e git+git://github.com/sigmavirus24/github3.py#egg=github3
-mock
-python-dateutil
-django-celery

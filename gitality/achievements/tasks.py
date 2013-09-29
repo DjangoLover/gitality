@@ -1,3 +1,7 @@
+from celery import task
+
+
+@task
 def inspect_achievement(achievements, entity_type, entity, dirty_fields):
     """
     Background celery task for achievements inspection.
@@ -6,7 +10,8 @@ def inspect_achievement(achievements, entity_type, entity, dirty_fields):
     achievements = achievements.filter(
         entity_type=entity_type,
         requirements__key__in=dirty_fields.keys()
-    )
+    # NOTE: Excluding unlocked achievements
+    ).exclude(id__in=entity.achievements.values_list('achievement_id', flat=True))
 
     # Inspecting
     for achievement in achievements:
