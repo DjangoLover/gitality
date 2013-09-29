@@ -62,7 +62,6 @@ class Commit(TimeStampedModel):
     """
     Represents commit object.
     """
-    objects = GithubCommitManager()
     # GitHub data
     additions = models.BigIntegerField(_(u'additions'), blank=True, null=True)
     deletions = models.BigIntegerField(_(u'deletions'), blank=True, null=True)
@@ -74,6 +73,8 @@ class Commit(TimeStampedModel):
 
     author = models.ForeignKey(CommitAuthor, related_name='commits')
     project = models.ForeignKey('projects.Project', related_name='commits')
+
+    objects = GithubCommitManager()
 
     class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'commit')
