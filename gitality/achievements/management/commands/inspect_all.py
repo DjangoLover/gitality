@@ -21,6 +21,7 @@ def get_fake_dirty_fields(model):
 class Command(NoArgsCommand):
     """
     Inspects all the progresses.
+    Used for all data inspections.
     """
 
     def handle_noargs(self, **options):
@@ -36,6 +37,7 @@ class Command(NoArgsCommand):
         sys.stdout.write('Inspecting {} commits\n'.format(commit_count))
 
         # TODO: Implement separate commit achievements inspection
+
         # for commit in Commit.objects.all():
         #     inspect_achievement.delay(
         #         achievements,

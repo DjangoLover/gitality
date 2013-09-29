@@ -56,6 +56,7 @@ $ pip install -r requirements.txt
 $ python gitality/manage.py syncdb --noinput
 $ python gitality/manage.py migrate --noinput
 $ python gitality/manage.py loaddata fixtures/dev/*
+$ python gitality/manage.py loaddata fixtures/common/*
 ```
 
 * Run project:
