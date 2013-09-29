@@ -108,4 +108,6 @@ def deploy():
 
     touch_reload()
 
+    supervisorctl('restart', 'celery')
+
     site_up()
