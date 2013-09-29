@@ -25,6 +25,11 @@ class CommonProgressModel(TimeStampedModel):
     class Meta(TimeStampedModel.Meta):
         abstract = True
 
+    def increment_counters(self, github_commit):
+        self.commit_count += 1
+        self.additions_count += github_commit.additions
+        self.deletions_count += github_commit.deletions
+
 
 class AuthorProgress(CommonProgressModel):
     """
@@ -41,9 +46,7 @@ class AuthorProgress(CommonProgressModel):
         return u'Progress for {}'.format(self.author)
 
     def update_state(self, github_commit):
-        self.commit_count += 1
-        self.additions_count += github_commit.additions
-        self.deletions_count += github_commit.deletions
+        self.increment_counters(github_commit)
         self.save()
 
 
@@ -79,19 +82,8 @@ class ProjectProgress(CommonProgressModel):
                 author_id=com.author.id)
             if created:
                 author.update_from_commit(com)
-            Commit.objects.create(
-                additions=com.additions,
-                deletions=com.deletions,
-                html_url=com.html_url,
-                message=com.message,
-                sha=com.sha,
-                etag=com.etag,
-                last_modified=com.last_modified,
-                author=author,
-                project=self.project)
+            Commit.create_from_real_commit(com, author, self.project)
+            self.increment_counters(com)
             author.progress.update_state(com)
-            self.commit_count += 1
-            self.additions_count += com.additions
-            self.deletions_count += com.deletions
         self.last_commit_update = timezone.now()
         self.save()

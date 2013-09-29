@@ -4,6 +4,21 @@ from django.utils.translation import ugettext_lazy as _
 from core.models import TimeStampedModel
 
 
+class GithubCommitManager(models.Manager):
+    def create_from_real_commit(self, github_commit, author, project):
+        commit = self.objects.create(
+            additions=github_commit.additions,
+            deletions=github_commit.deletions,
+            html_url=github_commit.html_url,
+            message=github_commit.message,
+            sha=github_commit.sha,
+            etag=github_commit.etag,
+            last_modified=github_commit.last_modified,
+            author=author,
+            project=project)
+        return commit
+
+
 class CommitAuthor(TimeStampedModel):
     """
     Represents commit (owner) author object.
@@ -44,7 +59,7 @@ class Commit(TimeStampedModel):
     """
     Represents commit object.
     """
-
+    objects = GithubCommitManager()
     # GitHub data
     additions = models.BigIntegerField(_(u'additions'), blank=True, null=True)
     deletions = models.BigIntegerField(_(u'deletions'), blank=True, null=True)
