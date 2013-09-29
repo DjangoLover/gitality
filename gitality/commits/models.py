@@ -13,6 +13,9 @@ class GithubCommitManager(models.Manager):
             return None
         if not (github_commit.sha and github_commit.html_url):
             return None
+        last_modified= github_commit.last_modified
+        if isinstance(last_modified, str):
+            last_modified = parse(github_commit.last_modified)
         commit = self.create(
             additions=github_commit.additions or 0,
             deletions=github_commit.deletions or 0,
@@ -20,7 +23,7 @@ class GithubCommitManager(models.Manager):
             message=github_commit.commit.message or '',
             sha=github_commit.sha,
             etag=github_commit.etag or '',
-            last_modified=parse(github_commit.last_modified),
+            last_modified=last_modified,
             author=author,
             project=project)
         return commit

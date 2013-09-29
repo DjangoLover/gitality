@@ -53,6 +53,7 @@ class ProgressModelsTest(TestCase):
             commit.additions = 2
             commit.deletions = 3
             return [commit]
+        def _return_mock(since=None): return _return_mocks()[0]
         u, _ = User.objects.get_or_create(username='gitality')
         proj, _ = Project.objects.get_or_create(
             name='Test', repo_url='https://github.com/dmrz/gitality',
@@ -62,6 +63,7 @@ class ProgressModelsTest(TestCase):
         self.assertEqual(progress.additions_count, 0)
         self.assertEqual(progress.deletions_count, 0)
         mock_repo.iter_commits.side_effect = _return_mocks
+        mock_repo.commit.side_effect = _return_mock
         # Run update state
         progress.update_state()
         self.assertTrue(mock_repo.iter_commits.called)
