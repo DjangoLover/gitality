@@ -26,9 +26,9 @@ class CommonProgressModel(TimeStampedModel):
         abstract = True
 
     def increment_counters(self, github_commit):
-        self.commit_count += 1
         self.additions_count += github_commit.additions
         self.deletions_count += github_commit.deletions
+        self.commit_count += 1
 
 
 class AuthorProgress(CommonProgressModel):
