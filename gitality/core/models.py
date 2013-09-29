@@ -31,7 +31,7 @@ class KVS(models.Model):
 
     TYPE_CHOICES = tuple((t, t) for t in dict(TYPE_MAP).keys())
 
-    key = models.CharField(max_length=256)
+    key = models.CharField(max_length=256, db_index=True)
     value_raw = models.TextField(_(u'raw value'), blank=True)
     value_type = models.CharField(
         _(u'value type'),
