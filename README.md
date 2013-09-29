@@ -6,7 +6,7 @@ Django Dash participation
 
 ## Idea
 
-Gitality is supposed to serve as as achievement engine for open source developers.
+Gitality is supposed to serve as achievement engine for open source developers.
 Developers unlock achievements by contributing to their GitHub projects.
 
 
