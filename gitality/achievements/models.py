@@ -84,6 +84,7 @@ class CommitAchievement(EntityAchievementModel):
     commit = models.ForeignKey('commits.Commit', related_name='achievements')
 
     class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'commit')
         verbose_name = _(u'commit achievement')
         verbose_name_plural = _(u'commit achievements')
 
@@ -99,6 +100,7 @@ class CommitAuthorAchievement(EntityAchievementModel):
     author = models.ForeignKey('commits.CommitAuthor', related_name='achievements')
 
     class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'author')
         verbose_name = _(u'commit author achievement')
         verbose_name_plural = _(u'commit author achievements')
 
@@ -117,6 +119,7 @@ class ProjectAchievement(EntityAchievementModel):
     project = models.ForeignKey('projects.Project', related_name='achievements')
 
     class Meta(EntityAchievementModel.Meta):
+        unique_together = ('achievement', 'project')
         verbose_name = _(u'project achievement')
         verbose_name_plural = _(u'project achievements')
 
