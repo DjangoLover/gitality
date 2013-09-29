@@ -29,7 +29,11 @@ class ProgressModelsTest(TestCase):
         self.assertEqual(progress.deletions_count, 3)
 
     def test_iso_date(self):
-        progress = ProjectProgress()
+        u, _ = User.objects.get_or_create(username='gitality')
+        proj, _ = Project.objects.get_or_create(
+            name='Test', repo_url='https://github.com/dmrz/gitality',
+            user=u)
+        progress = proj.progress
         self.assertEqual(progress.iso_date, None)
         time = now()
         progress.last_commit_update = time
