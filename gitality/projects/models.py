@@ -1,3 +1,5 @@
+from urlparse import urlparse
+
 from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -6,10 +8,13 @@ from autoslug import AutoSlugField
 from south.modelsinspector import add_introspection_rules
 from uuslug import slugify
 
+from core.models import TimeStampedModel
+from core.utils import cached_property
+
 add_introspection_rules([], ['^autoslug\.AutoSlugField'])
 
 
-class Project(models.Model):
+class Project(TimeStampedModel):
     """
     Represents project object.
     """
@@ -29,12 +34,7 @@ class Project(models.Model):
         related_name='projects'
     )
 
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        get_latest_by = 'created'
-        ordering = ['-created']
+    class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'project')
         verbose_name_plural = _(u'projects')
 
@@ -44,3 +44,11 @@ class Project(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('projects:project_detail', (), {'slug': self.slug})
+
+    @cached_property(ttl=0)
+    def github_user_repo_name(self):
+        """
+        Returns Github repo username and repo
+        name list, e.g. [johndoe, coolrepo].
+        """
+        return filter(None, urlparse(self.repo_url).path.split('/'))

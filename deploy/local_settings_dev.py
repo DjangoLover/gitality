@@ -7,11 +7,6 @@ DATABASES = {
     }
 }
 
-SOUTH_DATABASE_ADAPTERS = {
-    'default': 'south.db.postgresql_psycopg2'
-}
-
-
 settings.MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
