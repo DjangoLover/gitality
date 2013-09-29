@@ -17,3 +17,4 @@ requests
 github3.py
 -e git+git://github.com/sigmavirus24/github3.py#egg=github3
 mock
+python-dateutil

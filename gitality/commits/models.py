@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from dateutil.parser import parse
+
 from core.models import TimeStampedModel
 
 
@@ -15,10 +17,10 @@ class GithubCommitManager(models.Manager):
             additions=github_commit.additions or 0,
             deletions=github_commit.deletions or 0,
             html_url=github_commit.html_url,
-            message=github_commit.message or '',
+            message=github_commit.commit.message or '',
             sha=github_commit.sha,
-            etag=github_commit.etag,
-            last_modified=github_commit.last_modified,
+            etag=github_commit.etag or '',
+            last_modified=parse(github_commit.last_modified),
             author=author,
             project=project)
         return commit
