@@ -19,6 +19,8 @@ class CommonProgressModel(DirtyFieldsMixin, TimeStampedModel):
     required for all progress states.
     """
 
+    SKIP_FIELDS = ('created', 'modified', 'id')
+
     commit_count = models.BigIntegerField(default=0)
     additions_count = models.BigIntegerField(default=0)
     deletions_count = models.BigIntegerField(default=0)
@@ -43,7 +45,7 @@ class CommonProgressModel(DirtyFieldsMixin, TimeStampedModel):
         return models.get_model(
             'achievements',
             'Achievement'
-        ).get_entity_map()[self.get_entity().__class__]
+        ).get_entity_type_map()[self.get_entity().__class__]
 
     def check_requirement(self, key, value):
         return getattr(self, key) >= value
@@ -53,7 +55,10 @@ class CommonProgressModel(DirtyFieldsMixin, TimeStampedModel):
         Returns a dictionary of
         dirty fields with new values.
         """
-        return {f: getattr(self, f) for f in self.get_dirty_fields()}
+        # Skipping certain fields
+        return {f: getattr(self, f) for f in
+                filter(lambda v: v not in self.SKIP_FIELDS,
+                       self.get_dirty_fields())}
 
 
 class AuthorProgress(CommonProgressModel):
@@ -106,7 +111,9 @@ def on_progress_pre_save(sender, **kwargs):
     """
     Handles pre_save signal for progress models.
     """
+
     progress = kwargs['instance']
+
     dirty_fields = progress.get_dirty_fields_with_new_values()
     # Sending progress_state_changed signal if something changed
     dirty_fields and progress_state_changed.send(

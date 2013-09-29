@@ -1,9 +1,12 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import TimeStampedModel
 from core.utils import cached_property
+from progresses.signals import progress_state_changed
 
+from .engine import AchievementsEngine
 from .utils import get_logic_choices
 
 
@@ -28,8 +31,8 @@ class Achievement(TimeStampedModel):
     name = models.CharField(_(u'achievement name'), max_length=128, unique=True)
     description = models.TextField(_(u'achievement description'), blank=True)
 
-    entity = models.PositiveSmallIntegerField(
-        _(u'affected entity'),
+    entity_type = models.PositiveSmallIntegerField(
+        _(u'affected entity type'),
         choices=ENTITY_CHOICES,
         default=COMMIT_AUTHOR)
 
@@ -65,7 +68,7 @@ class Achievement(TimeStampedModel):
                 self.requirements.only('key', 'value_raw')}
 
     @classmethod
-    def get_entity_map(cls):
+    def get_entity_type_map(cls):
         """
         Returns mapping entity
         model to entity type.
@@ -140,3 +143,12 @@ class ProjectAchievement(EntityAchievementModel):
             self.achievement,
             self.project
         )
+
+# Skipping the following during tests
+if not settings.TESTING:
+
+    # Instantiating achievements engine
+    engine = AchievementsEngine(Achievement.objects.prefetch_related('requirements'))
+
+    # Connecting progress observer handler to signal
+    progress_state_changed.connect(engine.handle)

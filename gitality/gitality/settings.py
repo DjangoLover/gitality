@@ -6,6 +6,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+TESTING = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
