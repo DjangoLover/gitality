@@ -26,7 +26,7 @@ class ProjectListView(ListView):
 
     def get_queryset(self):
         qs = super(ProjectListView, self).get_queryset()
-        return qs.select_related('progress')
+        return qs.select_related('progress').order_by('name')
 
 
 project_list = ProjectListView.as_view()
