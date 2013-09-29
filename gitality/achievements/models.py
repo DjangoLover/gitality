@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import TimeStampedModel
+from core.utils import cached_property
 
 from .utils import get_logic_choices
 
@@ -54,3 +55,11 @@ class Achievement(TimeStampedModel):
         Returns achievement logic instance.
         """
         return self.logic_class(self)
+
+    @cached_property(ttl=0)
+    def requirements_dict(self):
+        """
+        Returns requirements as a dict {key: value}
+        """
+        return {kv.key: kv.value for kv in
+                self.requirements.only('key', 'value_raw')}
