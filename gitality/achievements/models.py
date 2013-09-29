@@ -91,6 +91,13 @@ class EntityAchievementModel(TimeStampedModel):
     class Meta(TimeStampedModel.Meta):
         abstract = True
 
+    # Achievement representation
+    def get_entity_name(self):
+        raise NotImplementedError
+
+    def get_entity_avatar_url(self):
+        raise NotImplementedError
+
 
 class CommitAchievement(EntityAchievementModel):
     """
@@ -106,6 +113,12 @@ class CommitAchievement(EntityAchievementModel):
 
     def __unicode__(self):
         return u'Commit achievement {0} for {1}'.format(self.achievement, self.commit)
+
+    def get_entity_name(self):
+        return self.commit.message
+
+    def get_entity_avatar_url(self):
+        return ''
 
 
 class CommitAuthorAchievement(EntityAchievementModel):
@@ -126,6 +139,12 @@ class CommitAuthorAchievement(EntityAchievementModel):
             self.author
         )
 
+    def get_entity_name(self):
+        return self.author.login
+
+    def get_entity_avatar_url(self):
+        return self.author.avatar_url
+
 
 class ProjectAchievement(EntityAchievementModel):
     """
@@ -144,6 +163,13 @@ class ProjectAchievement(EntityAchievementModel):
             self.achievement,
             self.project
         )
+
+    def get_entity_name(self):
+        return self.project.name
+
+    def get_entity_avatar_url(self):
+        return ''
+
 
 # Skipping the following during tests
 if not settings.TESTING:
