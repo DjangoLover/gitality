@@ -25,10 +25,10 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-erase',
     # Packages to cover
-    '--cover-package', 'projects, progresses, commits, core',
+    '--cover-package', 'achievements, commits, core, progresses, projects',
 
     # Packages to test
-    'projects', 'progresses', 'commits', 'core',
+    'achievements', 'commits', 'core', 'progresses', 'projects',
 
     '--exclude=functional'
 ]
