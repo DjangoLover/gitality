@@ -1,15 +1,19 @@
 from django.shortcuts import render
 
 from .exceptions import DeliberateError
-from commits.models import Commit
-
+from achievements.models import (
+    CommitAuthorAchievement,
+    CommitAchievement,
+    ProjectAchievement)
 
 def home(request):
-    # Place unlocked achievements here
-    lately_unlocked = Commit.objects.order_by('-last_modified')
+    latest_comitauthor = CommitAuthorAchievement.objects.all()
+    latest_comit = CommitAchievement.objects.all()
+    latest_proj = ProjectAchievement.objects.all()
     context = {
-        'lately_unlocked': lately_unlocked[:20],
-        # 'added_achievements': 'blah'
+        'latest_comitauthor': latest_comitauthor[:20],
+        'latest_comit': latest_comit[:20],
+        'latest_proj': latest_proj[:20],
     }
     return render(request, 'core/index.html', context)
 
