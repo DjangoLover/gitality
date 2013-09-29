@@ -113,10 +113,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    'core',
-    'projects',
+    'achievements',
     'commits',
+    'core',
     'progresses',
+    'projects',
 
     # Third-party
     'social_auth',
@@ -128,9 +129,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-LOGIN_URL          = '/login/'
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGIN_ERROR_URL    = '/error/'
+LOGIN_ERROR_URL = '/error/'
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
