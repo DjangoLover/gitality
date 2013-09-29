@@ -2,7 +2,7 @@ from django.test import SimpleTestCase
 from django.conf import settings
 from django.contrib.auth.models import User
 
-from mock import patch, Mock
+from mock import patch
 
 from .forms import ProjectForm
 from .models import Project
