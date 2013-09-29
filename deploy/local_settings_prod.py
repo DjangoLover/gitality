@@ -37,4 +37,10 @@ CACHES = {
     }
 }
 
+# Provide it
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
+GITHUB_BOT_NAME = ''
+GITHUB_BOT_PASSWORD = ''
+
 CACHE_MIDDLEWARE_SECONDS = 60 * 5  # 5 minutes

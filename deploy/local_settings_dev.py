@@ -27,4 +27,10 @@ CACHES = {
     }
 }
 
+# Provide it
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
+GITHUB_BOT_NAME = ''
+GITHUB_BOT_PASSWORD = ''
+
 del settings

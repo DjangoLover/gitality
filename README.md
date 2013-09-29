@@ -78,3 +78,28 @@ $ python gitality/manage.py runserver
 ```
 
 **NOTE:** You can login to admin using the following credentials: `username = admin`, `password = admin`.
+
+
+## Important
+
+Certain additional settings are required for a project to operate properly, you can provide all in `gitality/gitality/local_settings.py`:
+
+```python
+# Used for GitHub sign in support, you can get these
+# by creating an application in your GitHub settings.
+GITHUB_APP_ID = '...'
+GITHUB_API_SECRET = '...'
+
+# GitHub account credentials that
+# will be used to consume GitHub's API.
+GITHUB_BOT_NAME = '...'
+GITHUB_BOT_PASSWORD = '...'
+```
+
+Gitality uses background and periodic tasks for it's functionality by utilizing amazing [Celery](http://www.celeryproject.org/) project. Celery worker uses [redis](http://redis.io/) as broker and result backend, so it has to be installed (otherwise you can override celery settings).
+
+Running celery (in separte terminal window):
+
+```bash
+$ python gitality/manage.py celery worker -B
+```
