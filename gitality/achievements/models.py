@@ -39,6 +39,8 @@ class Achievement(TimeStampedModel):
         choices=get_logic_choices(),
         max_length=256)
 
+    requirements = models.ManyToManyField('core.KVS')
+
     class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'achievement')
         verbose_name_plural = _(u'achievements')

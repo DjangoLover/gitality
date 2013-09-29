@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from annoying.fields import AutoOneToOneField
 from south.modelsinspector import add_introspection_rules
 
-from core.models import TimeStampedModel, KVS
+from core.models import TimeStampedModel
 
 add_introspection_rules([], ['^annoying\.fields\.AutoOneToOneField'])
 
@@ -19,7 +19,7 @@ class CommonProgressModel(TimeStampedModel):
     additions_count = models.BigIntegerField(default=0)
     deletions_count = models.BigIntegerField(default=0)
 
-    extra_data = models.ManyToManyField(KVS, blank=True, null=True)
+    extra_data = models.ManyToManyField('core.KVS', blank=True, null=True)
 
     class Meta(TimeStampedModel.Meta):
         abstract = True
