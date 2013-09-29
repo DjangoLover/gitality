@@ -4,17 +4,14 @@
 
 {% block content %}
 <div class="ui grid">
-  <div class="fourteen wide column">
+  <div class="five wide column">
     <div class="ui small piled feed segment">
-      <h5 class="ui header">Latest Achievements Unlocked</h5>
-      {% for commit in lately_unlocked %}
+      <h5 class="ui header">Projects Achievements</h5>
+      {% for ach in latest_proj %}
       <div class="event">
-        <div class="label">
-          <img src="{{ commit.author.avatar_url }}">
-        </div>
         <div class="content">
           <div class="summary">
-            <a>{{ commit.author.login }}</a> unlocks some awesome achievement!
+            <a>{{ ach.project.name }}</a> unlocked <span class="ach-name">{{ ach.achievement.name }}</span>!
             <i class="trophy icon"></i>
           </div>
         </div>
@@ -22,7 +19,40 @@
       {% endfor %}
     </div>
   </div>
-
+  <div class="six wide column">
+    <div class="ui small piled feed segment">
+      <h5 class="ui header">Authors Achievements</h5>
+      {% for ach in latest_comitauthor %}
+      <div class="event">
+        <div class="label">
+          <img src="{{ ach.author.avatar_url }}">
+        </div>
+        <div class="content">
+          <div class="summary">
+            <a>{{ ach.author.login }}</a> unlocked <span class="ach-name">{{ ach.achievement.name }}</span>!
+            <i class="trophy icon"></i>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="five wide column">
+    <div class="ui small piled feed segment">
+      <h5 class="ui header">Commits Achievements</h5>
+      {% for ach in latest_comit %}
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+            {{ ach.commit.sha }} by {{ ach.commit.author.login }} unlocked <span class="ach-name">{{ ach.achievement.name }}</span>!
+            <i class="trophy icon"></i>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
   <div class="two wide column new-achievements">
     <div class="ui small feed segment">
       <h5 class="ui header">New!</h5>
@@ -35,4 +65,3 @@
     </div>
   </div>
 </div>
-{% endblock content %}
