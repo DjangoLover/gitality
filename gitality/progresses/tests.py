@@ -4,10 +4,14 @@ from django.utils.timezone import now
 
 from mock import Mock, patch
 
+from achievements.models import Achievement
+
+from commits.models import CommitAuthor
+from projects.factories import ProjectFactory
+from projects.models import Project
+
 from .tasks import update_projects_state
 from .models import CommonProgressModel, ProjectProgress
-from commits.models import CommitAuthor
-from projects.models import Project
 
 
 class ProgressModelsTest(TestCase):
@@ -47,6 +51,7 @@ class ProgressModelsTest(TestCase):
     @patch('commits.models.GithubCommitManager.create_from_real_commit')
     def test_project_update_state(self, mock_create, mock_repo, mock_update):
         authors_before = CommitAuthor.objects.count()
+
         def _return_mocks(since=None):
             commit = Mock()
             commit.author.id = 4
@@ -54,7 +59,10 @@ class ProgressModelsTest(TestCase):
             commit.additions = 2
             commit.deletions = 3
             return [commit]
-        def _return_mock(since=None): return _return_mocks()[0]
+
+        def _return_mock(since=None):
+            return _return_mocks()[0]
+
         u, _ = User.objects.get_or_create(username='gitality')
         proj, _ = Project.objects.get_or_create(
             name='Test', repo_url='https://github.com/dmrz/gitality',
@@ -101,3 +109,33 @@ class ProgressTasksTest(TestCase):
         self.assertEqual(ProjectProgress.objects.count(), 1)
         update_projects_state()
         mock_update.assert_called_once_with()
+
+
+class CommonProgressModelTest(TestCase):
+
+    def setUp(self):
+        self.project = ProjectFactory.create()
+
+    def test_project_progress_dirty_fields(self):
+        self.assertEqual(self.project.progress.commit_count, 0)
+        self.assertDictEqual(
+            self.project.progress.get_dirty_fields_with_new_values(),
+            {}
+        )
+        self.project.progress.commit_count += 1
+        self.assertDictEqual(
+            self.project.progress.get_dirty_fields_with_new_values(),
+            {'commit_count': 1}
+        )
+
+    @patch('progresses.models.progress_state_changed.send')
+    def test_progress_state_changed_signal_sent(self, send_patched):
+        self.project.progress.save()
+        self.project.progress.commit_count += 1
+        self.project.progress.save()
+        self.assertTrue(send_patched.called)
+        send_patched.assert_called_once_with(
+            ProjectProgress,
+            entity_type=Achievement.PROJECT,
+            entity=self.project,
+            dirty_fields={'commit_count': 1})

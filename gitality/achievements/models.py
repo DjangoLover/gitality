@@ -1,9 +1,12 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import TimeStampedModel
 from core.utils import cached_property
+from progresses.signals import progress_state_changed
 
+from .engine import AchievementsEngine
 from .utils import get_logic_choices
 
 
@@ -15,8 +18,8 @@ class Achievement(TimeStampedModel):
     COMMIT, COMMIT_AUTHOR, PROJECT = range(1, 4)
     ENTITY_CHOICES = (
         (COMMIT, _(u'commit')),
-        (COMMIT, _(u'commit author')),
-        (COMMIT, _(u'project')),
+        (COMMIT_AUTHOR, _(u'commit author')),
+        (PROJECT, _(u'project')),
     )
 
     key = models.CharField(
@@ -28,8 +31,8 @@ class Achievement(TimeStampedModel):
     name = models.CharField(_(u'achievement name'), max_length=128, unique=True)
     description = models.TextField(_(u'achievement description'), blank=True)
 
-    entity = models.PositiveSmallIntegerField(
-        _(u'affected entity'),
+    entity_type = models.PositiveSmallIntegerField(
+        _(u'affected entity type'),
         choices=ENTITY_CHOICES,
         default=COMMIT_AUTHOR)
 
@@ -63,6 +66,18 @@ class Achievement(TimeStampedModel):
         """
         return {kv.key: kv.value for kv in
                 self.requirements.only('key', 'value_raw')}
+
+    @classmethod
+    def get_entity_type_map(cls):
+        """
+        Returns mapping entity
+        model to entity type.
+        """
+        return {
+            models.get_model('commits', 'Commit'): cls.COMMIT,
+            models.get_model('commits', 'CommitAuthor'): cls.COMMIT_AUTHOR,
+            models.get_model('projects', 'Project'): cls.PROJECT
+        }
 
 
 class EntityAchievementModel(TimeStampedModel):
@@ -128,3 +143,12 @@ class ProjectAchievement(EntityAchievementModel):
             self.achievement,
             self.project
         )
+
+# Skipping the following during tests
+if not settings.TESTING:
+
+    # Instantiating achievements engine
+    engine = AchievementsEngine(Achievement.objects.prefetch_related('requirements'))
+
+    # Connecting progress observer handler to signal
+    progress_state_changed.connect(engine.handle)

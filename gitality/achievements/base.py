@@ -31,5 +31,8 @@ class BaseAchievementLogic(object):
 
     def unlock(self, entity):
         """
-        Unlocks achievement
+        Unlocks achievement for given entity
         """
+        # Creating entity achievement if not exists
+        if not entity.achievements.filter(achievement=self.achievement).exists():
+            entity.achievements.create(achievement=self.achievement)
