@@ -27,14 +27,15 @@ class CommitAuthor(TimeStampedModel):
         verbose_name_plural = _(u'commit authors')
 
     def update_from_commit(self, github_commit):
-        self.avatar_url = github_commit.author.avatar_url
-        self.bio = github_commit.author.bio
-        self.email = github_commit.author.email
-        self.gravatar_id = github_commit.author.gravatar_id
-        self.login = github_commit.author.login
-        self.name = github_commit.author.name
-        self.followers = github_commit.author.followers
-        self.following = github_commit.author.following
+        author = github_commit.author
+        self.avatar_url = getattr(author, 'avatar_url', '')
+        self.bio = getattr(author, 'bio', '')
+        self.email = getattr(author, 'email', '')
+        self.gravatar_id = getattr(author, 'gravatar_id', '')
+        self.login = getattr(author, 'login', '')
+        self.name = getattr(author, 'name', '')
+        self.followers = getattr(author, 'followers', 0)
+        self.following = getattr(author, 'following', 0)
         self.save()
 
     def __unicode__(self):

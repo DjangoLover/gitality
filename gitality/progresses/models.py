@@ -1,12 +1,11 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from dajngo.utils.timezone import now
+from django.utils import timezone
 
 from annoying.fields import AutoOneToOneField
 from south.modelsinspector import add_introspection_rules
 
 from core.models import TimeStampedModel, KVS
-from commits.models import CommitAuthor, Commit
 
 add_introspection_rules([], ['^annoying\.fields\.AutoOneToOneField'])
 
@@ -73,6 +72,7 @@ class ProjectProgress(CommonProgressModel):
         return date
 
     def update_state(self):
+        from commits.models import CommitAuthor, Commit
         repo = self.project.github_repo_obj()
         for com in repo.iter_commits(since=self.iso_date):
             author, created = CommitAuthor.objects.get_or_create(
@@ -93,5 +93,5 @@ class ProjectProgress(CommonProgressModel):
             self.commit_count += 1
             self.additions_count += com.additions
             self.deletions_count += com.deletions
-        self.last_commit_update = now()
+        self.last_commit_update = timezone.now()
         self.save()
