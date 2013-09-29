@@ -8,10 +8,28 @@ class BaseAchievementLogic(object):
 
     __metaclass__ = abc.ABCMeta
 
-    def __init__(self, achievement, entity):
-        self.achievement = entity
-        self.entity = entity
+    def __init__(self, achievement):
+        self.achievement = achievement
 
-    @abc.abstractmethod
-    def inspect(self, user):
-        raise NotImplementedError
+    def get_requirements(self):
+        """
+        Returns achievement requirements
+        """
+        return self.achievement.requirements_dict
+
+    def inspect(self, entity):
+        """
+        Checks whether entity progress state
+        fields meet achievement requirements.
+        """
+
+        for key, value in self.get_requirements().iteritems():
+            if not entity.progress.check_requirement(key, value):
+                return
+
+        self.unlock(entity)
+
+    def unlock(self, entity):
+        """
+        Unlocks achievement
+        """

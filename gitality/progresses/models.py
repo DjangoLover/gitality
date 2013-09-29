@@ -24,6 +24,9 @@ class CommonProgressModel(TimeStampedModel):
     class Meta(TimeStampedModel.Meta):
         abstract = True
 
+    def check_requirement(self, key, value):
+        return getattr(self, key) >= value
+
 
 class AuthorProgress(CommonProgressModel):
     """
