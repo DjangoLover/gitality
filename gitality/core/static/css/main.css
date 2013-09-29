@@ -78,3 +78,6 @@ a:hover {
 .custom.or {
     height: .75em!important;
 }
+.commits-count {
+    text-align: center;
+}

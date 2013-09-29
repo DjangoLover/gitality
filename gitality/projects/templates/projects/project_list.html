@@ -9,6 +9,9 @@
   {% for project in project_list %}
     <a class="item" href="{{ project.get_absolute_url }}">
       <i class="github icon large"></i>
+      <div class="right floated tiny commits-count">
+        {{ project.commits_count }}<br>commits
+      </div>
       <div class="content">
         <div class="header">{{ project.name }}</div>{{ project.repo_url }}
       </div>

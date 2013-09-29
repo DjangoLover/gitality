@@ -3,5 +3,42 @@
 {% block title %}Home &#124; {{ block.super }}{% endblock title %}
 
 {% block content %}
-    <p>Blah</p>
+<div class="ui grid">
+  <div class="fourteen wide column">
+    <div class="ui small piled feed segment">
+      <h5 class="ui header">Latest Achievements</h5>
+      {% for commit in lately_unlocked %}
+      <div class="event">
+        <div class="label">
+          <img src="{{ commit.author.avatar_url }}">
+        </div>
+        <div class="content">
+          <div class="summary">
+            <a>{{ commit.author.login }}</a> unlocks some awesome achievement!
+            <i class="trophy icon"></i>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="one wide column">
+    <div class="ui small feed segment">
+      <h5 class="ui header">Latest Commits</h5>
+
+        <div class="event">
+        <div class="content">
+          <div class="summary">
+            Mighty <a>{{ commit.author.login }}</a>
+            adds {{ commit.additions }} and
+            deletes {{ commit.deletions }} lines
+            saying:<br>
+            {{ commit.message }}!
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

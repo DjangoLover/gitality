@@ -47,6 +47,22 @@ class Project(TimeStampedModel):
         return ('projects:project_detail', (), {'slug': self.slug})
 
     @property
+    def commits_count(self):
+        return self.progress.commit_count
+
+    @property
+    def additions_count(self):
+        return self.progress.additions_count
+
+    @property
+    def deletions_count(self):
+        return self.progress.deletions_count
+
+    @property
+    def latest_commits(self):
+        return self.commits.order_by('-last_modified')[:15]
+
+    @property
     def github_repo_obj(self):
         logged_in = login(
             settings.GITHUB_BOT_NAME,
