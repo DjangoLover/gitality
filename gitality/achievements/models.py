@@ -15,8 +15,8 @@ class Achievement(TimeStampedModel):
     COMMIT, COMMIT_AUTHOR, PROJECT = range(1, 4)
     ENTITY_CHOICES = (
         (COMMIT, _(u'commit')),
-        (COMMIT, _(u'commit author')),
-        (COMMIT, _(u'project')),
+        (COMMIT_AUTHOR, _(u'commit author')),
+        (PROJECT, _(u'project')),
     )
 
     key = models.CharField(
@@ -63,6 +63,18 @@ class Achievement(TimeStampedModel):
         """
         return {kv.key: kv.value for kv in
                 self.requirements.only('key', 'value_raw')}
+
+    @classmethod
+    def get_entity_map(cls):
+        """
+        Returns mapping entity
+        model to entity type.
+        """
+        return {
+            models.get_model('commits', 'Commit'): cls.COMMIT,
+            models.get_model('commits', 'CommitAuthor'): cls.COMMIT_AUTHOR,
+            models.get_model('projects', 'Project'): cls.PROJECT
+        }
 
 
 class EntityAchievementModel(TimeStampedModel):
