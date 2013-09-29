@@ -12,8 +12,20 @@ a {
 }
 footer {
     background-color: #ffd464;
-    padding: 20px;
+    padding: 20px 0;
 }
+footer > div {
+  width: 60%;
+  margin: 0 auto;
+  color: #ffffff;
+}
+footer div.floated {
+  display: inline-block;
+}
+footer a {
+  color: #ffffff;
+}
+footer a:hover,
 a:hover {
     color: #f36966;
 }
