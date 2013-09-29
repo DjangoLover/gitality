@@ -8,6 +8,7 @@
 {% else %}
     {% url "projects:project_update" as submit_url %}
 {% endif %}
+<h3 chass="ui header">Add new project</h3>
 <form method="post", action="{{ submit_url }}" class="create-proj-form">
     {% csrf_token %}
     <div class="ui form segment">
