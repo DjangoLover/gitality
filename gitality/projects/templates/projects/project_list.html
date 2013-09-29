@@ -18,4 +18,29 @@
     </a>
   {% endfor %}
 </div>
+{% if is_paginated %}
+<div class="ui borderless pagination menu">
+  {% if page_obj.has_previous %}
+  <a class="item" href="?page={{ page_obj.previous_page_number }}">
+    <i class="icon left arrow"></i> Previous
+  </a>
+  {% endif %}
+  {% for i in paginator.page_range %}
+    {% if i < page_obj.number %}
+      <a class="item" href="?page={{ i }}">{{ i }}</a>
+    {% endif %}
+  {% endfor %}
+  <a class="item active active-page">{{ page_obj.number }}</a>
+  {% for i in paginator.page_range %}
+    {% if i > page_obj.number %}
+      <a class="item" href="?page={{ i }}">{{ i }}</a>
+    {% endif %}
+  {% endfor %}
+  {% if page_obj.has_next %}
+  <a class="item" href="?page={{ page_obj.next_page_number }}">
+    Next <i class="icon right arrow"></i>
+  </a>
+  {% endif %}
+</div>
+{% endif %}
 {% endblock content %}

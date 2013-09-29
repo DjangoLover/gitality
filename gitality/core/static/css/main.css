@@ -84,3 +84,15 @@ a:hover {
 .new-achievements {
     text-align: center;
 }
+.pagination.menu {
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+}
+.pagination.menu .item {
+    color: #555555!important;
+}
+.pagination.menu .item.active-page {
+    color: #f36966!important;
+}

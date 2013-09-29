@@ -20,10 +20,11 @@ from .models import Project
 class ProjectListView(ListView):
 
     model = Project
+    paginate_by = 20
 
     def get_queryset(self):
         qs = super(ProjectListView, self).get_queryset()
-        return qs.select_related('progress')
+        return qs.select_related('progress').order_by('name')
 
 
 project_list = ProjectListView.as_view()
