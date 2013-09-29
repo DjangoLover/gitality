@@ -1,0 +1,38 @@
+[
+{
+    "pk": 1, 
+    "model": "djcelery.intervalschedule", 
+    "fields": {
+        "every": 25, 
+        "period": "minutes"
+    }
+},
+{
+    "pk": 1, 
+    "model": "djcelery.periodictasks", 
+    "fields": {
+        "last_update": "2013-09-29T15:02:25.264Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "djcelery.periodictask", 
+    "fields": {
+        "task": "progresses.tasks.update_projects_state", 
+        "name": "update project progress state", 
+        "exchange": null, 
+        "last_run_at": null, 
+        "args": "[]", 
+        "enabled": true, 
+        "routing_key": null, 
+        "crontab": null, 
+        "interval": 1, 
+        "queue": null, 
+        "total_run_count": 0, 
+        "expires": null, 
+        "kwargs": "{}", 
+        "date_changed": "2013-09-29T15:02:25.289Z", 
+        "description": ""
+    }
+}
+]

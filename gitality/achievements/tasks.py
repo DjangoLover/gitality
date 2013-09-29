@@ -1,3 +1,7 @@
+from celery import task
+
+
+@task
 def inspect_achievement(achievements, entity_type, entity, dirty_fields):
     """
     Background celery task for achievements inspection.
