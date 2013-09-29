@@ -4,6 +4,12 @@ gitality
 Django Dash participation
 
 
+## Idea
+
+Gitality is supposed to serve as as achievement engine for open source developers.
+Developers unlock achievements by contributing to their GitHub projects.
+
+
 ## Installation
 
 #### Getting project source code:
