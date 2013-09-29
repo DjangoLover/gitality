@@ -14,4 +14,9 @@ class AchievementsEngine(object):
         """
         Serves as a signal receiver handler.
         """
-        inspect_achievement.delay(self.achievements, **kwargs)
+        inspect_achievement.delay(
+            self.achievements,
+            kwargs['entity_type'],
+            kwargs['entity'],
+            kwargs['dirty_fields']
+        )
