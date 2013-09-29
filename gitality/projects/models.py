@@ -2,14 +2,17 @@ from urlparse import urlparse
 
 from django.conf import settings
 from django.db import models
+from django.db.models.signals import post_save
 from django.utils.translation import ugettext_lazy as _
 
 from autoslug import AutoSlugField
 from south.modelsinspector import add_introspection_rules
 from uuslug import slugify
+from github3 import login
 
 from core.models import TimeStampedModel
 from core.utils import cached_property
+from progresses.models import ProjectProgress
 
 add_introspection_rules([], ['^autoslug\.AutoSlugField'])
 
@@ -45,6 +48,13 @@ class Project(TimeStampedModel):
     def get_absolute_url(self):
         return ('projects:project_detail', (), {'slug': self.slug})
 
+    def github_repo_obj(self):
+        logged_in = login(
+            settings.GITHUB_BOT_NAME,
+            settings.GITHUB_BOT_PASSWORD)
+        repo = logged_in.repository(*self.github_user_repo_name)
+        return repo
+
     @cached_property(ttl=0)
     def github_user_repo_name(self):
         """
@@ -52,3 +62,14 @@ class Project(TimeStampedModel):
         name list, e.g. [johndoe, coolrepo].
         """
         return filter(None, urlparse(self.repo_url).path.split('/'))
+
+
+def progress_from_project(sender, instance, created, **kwargs):
+    if not getattr(instance, 'progress'):
+        ProjectProgress.objects.create(project=instance)
+
+
+post_save.connect(
+    progress_from_project,
+    sender=Project,
+    dispatch_uid='progress_from_project')

@@ -14,4 +14,5 @@ pinocchio==0.3.1
 psycopg2==2.5.1
 unidecode
 requests
-github3
+github3.py
+-e git+git://github.com/sigmavirus24/github3.py#egg=github3

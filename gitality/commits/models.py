@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.db.models.signals import post_save
 
 from core.models import TimeStampedModel
+from progresses.models import AuthorProgress
 
 
 class CommitAuthor(TimeStampedModel):
@@ -23,6 +25,17 @@ class CommitAuthor(TimeStampedModel):
     class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'commit author')
         verbose_name_plural = _(u'commit authors')
+
+    def update_from_commit(self, github_commit):
+        self.avatar_url = github_commit.author.avatar_url
+        self.bio = github_commit.author.bio
+        self.email = github_commit.author.email
+        self.gravatar_id = github_commit.author.gravatar_id
+        self.login = github_commit.author.login
+        self.name = github_commit.author.name
+        self.followers = github_commit.author.followers
+        self.following = github_commit.author.following
+        self.save()
 
     def __unicode__(self):
         return u'{}'.format(self.name or self.login)
@@ -51,3 +64,14 @@ class Commit(TimeStampedModel):
 
     def __unicode__(self):
         return u'{0}: {1}'.format(self.author, self.message)
+
+
+def progress_from_author(sender, instance, created, **kwargs):
+    if not getattr(instance, 'progress'):
+        AuthorProgress.objects.create(author=instance)
+
+
+post_save.connect(
+    progress_from_author,
+    sender=CommitAuthor,
+    dispatch_uid='progress_from_author')
