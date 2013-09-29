@@ -46,6 +46,7 @@ class Project(TimeStampedModel):
     def get_absolute_url(self):
         return ('projects:project_detail', (), {'slug': self.slug})
 
+    @property
     def github_repo_obj(self):
         logged_in = login(
             settings.GITHUB_BOT_NAME,

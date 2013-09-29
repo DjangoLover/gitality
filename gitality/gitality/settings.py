@@ -1,3 +1,5 @@
+# Django settings for gitality project.
+import os.path
 
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
@@ -160,6 +162,13 @@ LOGGING = {
         },
     }
 }
+
+# Provide it in local_settings
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
+GITHUB_BOT_NAME = ''
+GITHUB_BOT_PASSWORD = ''
+
 # Loading local settings
 try:
     from local_settings import *

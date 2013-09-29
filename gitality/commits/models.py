@@ -6,10 +6,10 @@ from core.models import TimeStampedModel
 
 class GithubCommitManager(models.Manager):
     def create_from_real_commit(self, github_commit, author, project):
-        prev_commits = self.objects.filter(sha=github_commit.sha)
+        prev_commits = self.filter(sha=github_commit.sha)
         if prev_commits.exists():
             return None
-        commit = self.objects.create(
+        commit = self.create(
             additions=github_commit.additions,
             deletions=github_commit.deletions,
             html_url=github_commit.html_url,

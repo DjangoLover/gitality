@@ -3,6 +3,7 @@ from django.test import SimpleTestCase
 from mock import Mock
 
 from .models import CommitAuthor, Commit
+from projects.models import Project
 
 
 class CommitAuthorModelTest(SimpleTestCase):
@@ -22,10 +23,16 @@ class CommitAuthorModelTest(SimpleTestCase):
         self.assertEqual(author.followers, 3)
 
     def test_create_from_real_commit(self):
+        author = CommitAuthor.objects.create(author_id=99)
+        project = Project.objects.create(
+            user_id=1, name='1', repo_url='http://google.com')
         self.assertEqual(Commit.objects.count(), 0)
-        commit, author, project = Mock(), Mock(), Mock()
+        commit = Mock()
         commit.sha = '12312312312313'
-        Commit.create_from_real_commit(commit, author, project)
+        commit.additions = 0
+        commit.deletions = 0
+        commit.last_modified = '2012-09-09'
+        Commit.objects.create_from_real_commit(commit, author, project)
         self.assertEqual(Commit.objects.count(), 1)
-        Commit.create_from_real_commit(commit, author, project)
+        Commit.objects.create_from_real_commit(commit, author, project)
         self.assertEqual(Commit.objects.count(), 1)
