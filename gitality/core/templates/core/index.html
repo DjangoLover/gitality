@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="ui grid">
-  <div class="five wide column">
+  <div class="eight wide column">
     <div class="ui small piled feed segment">
       <h5 class="ui header">Projects Achievements</h5>
       {% for ach in latest_proj %}
@@ -19,7 +19,7 @@
       {% endfor %}
     </div>
   </div>
-  <div class="six wide column">
+  <div class="eight wide column">
     <div class="ui small piled feed segment">
       <h5 class="ui header">Authors Achievements</h5>
       {% for ach in latest_comitauthor %}
@@ -30,21 +30,6 @@
         <div class="content">
           <div class="summary">
             <a>{{ ach.author.login }}</a> unlocked <span class="ach-name">{{ ach.achievement.name }}</span>!
-            <i class="trophy icon"></i>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-  <div class="five wide column">
-    <div class="ui small piled feed segment">
-      <h5 class="ui header">Commits Achievements</h5>
-      {% for ach in latest_comit %}
-      <div class="event">
-        <div class="content">
-          <div class="summary">
-            {{ ach.commit.sha }} by {{ ach.commit.author.login }} unlocked <span class="ach-name">{{ ach.achievement.name }}</span>!
             <i class="trophy icon"></i>
           </div>
         </div>

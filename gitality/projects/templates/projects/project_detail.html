@@ -46,5 +46,23 @@
       {% endfor %}
     </div>
   </div>
+  <div class="seven wide column">
+    <div class="ui small feed segment">
+      <h5 class="ui header">Latest Commits</h5>
+      {% for commit in project.latest_commits %}
+        <div class="event">
+        <div class="content">
+          <div class="summary">
+            Mighty <a>{{ commit.author.login }}</a>
+            adds {{ commit.additions }} and
+            deletes {{ commit.deletions }} lines
+            saying:<br>
+            {{ commit.message }}!
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock content %}
