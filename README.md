@@ -12,7 +12,7 @@ Developers unlock achievements by contributing to their GitHub projects.
 ## Usage
 
 Login via Github. Add your Github project at the 'Create' page.
-Every 25 minutes status of your project will be updated and you'll get
+Every 25 minutes status of your project will be updated (webhooks support is not available yet) and you'll get
 new achievements and see stats.
 
 
