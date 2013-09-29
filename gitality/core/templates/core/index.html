@@ -6,7 +6,7 @@
 <div class="ui grid">
   <div class="fourteen wide column">
     <div class="ui small piled feed segment">
-      <h5 class="ui header">Latest Achievements</h5>
+      <h5 class="ui header">Latest Achievements Unlocked</h5>
       {% for commit in lately_unlocked %}
       <div class="event">
         <div class="label">
@@ -23,21 +23,15 @@
     </div>
   </div>
 
-  <div class="one wide column">
+  <div class="two wide column new-achievements">
     <div class="ui small feed segment">
-      <h5 class="ui header">Latest Commits</h5>
-
-        <div class="event">
-        <div class="content">
-          <div class="summary">
-            Mighty <a>{{ commit.author.login }}</a>
-            adds {{ commit.additions }} and
-            deletes {{ commit.deletions }} lines
-            saying:<br>
-            {{ commit.message }}!
-          </div>
-        </div>
-        </div>
+      <h5 class="ui header">New!</h5>
+      <a><i class="rocket icon huge"></i></a>
+      <a><i class="coffee icon huge"></i></a>
+      <a><i class="beer icon huge"></i></a>
+      <a><i class="book icon huge"></i></a>
+      <a><i class="gift icon huge"></i></a>
+      <a><i class="glass icon huge"></i></a>
     </div>
   </div>
 </div>

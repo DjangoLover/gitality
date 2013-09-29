@@ -8,7 +8,7 @@ def home(request):
     # Place unlocked achievements here
     lately_unlocked = Commit.objects.order_by('-last_modified')
     context = {
-        'lately_unlocked': lately_unlocked[:25],
+        'lately_unlocked': lately_unlocked[:20],
         # 'added_achievements': 'blah'
     }
     return render(request, 'core/index.html', context)
