@@ -2,7 +2,7 @@ from django.test import SimpleTestCase
 
 from mock import Mock
 
-from .models import CommitAuthor
+from .models import CommitAuthor, Commit
 
 
 class CommitAuthorModelTest(SimpleTestCase):
@@ -20,3 +20,12 @@ class CommitAuthorModelTest(SimpleTestCase):
         self.assertEqual(author.bio, 'Test')
         self.assertEqual(author.following, 3)
         self.assertEqual(author.followers, 3)
+
+    def test_create_from_real_commit(self):
+        self.assertEqual(Commit.objects.count(), 0)
+        commit, author, project = Mock(), Mock(), Mock()
+        commit.sha = '12312312312313'
+        Commit.create_from_real_commit(commit, author, project)
+        self.assertEqual(Commit.objects.count(), 1)
+        Commit.create_from_real_commit(commit, author, project)
+        self.assertEqual(Commit.objects.count(), 1)
