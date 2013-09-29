@@ -1,5 +1,6 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
 from django.contrib.auth.models import User
+from django.utils.timezone import now
 
 from mock import Mock, patch
 
@@ -8,7 +9,7 @@ from commits.models import CommitAuthor
 from projects.models import Project
 
 
-class ProgressModelsTest(SimpleTestCase):
+class ProgressModelsTest(TestCase):
     def test_increment_counters(self):
         progress = CommonProgressModel()
         self.assertEqual(progress.commit_count, 0)
@@ -25,8 +26,9 @@ class ProgressModelsTest(SimpleTestCase):
     def test_iso_date(self):
         progress = ProjectProgress()
         self.assertEqual(progress.iso_date, None)
-        progress.last_commit_update = '2003-09-09 20:00'
-        self.assertEqual(progress.iso_date, '2003-09-09T20:00')
+        time = now()
+        progress.last_commit_update = time
+        self.assertEqual(progress.iso_date, 'T'.join(str(time).split(' ')))
 
     @patch('progresses.models.AuthorProgress.increment_counters')
     def test_author_update_state(self, mock_inc):

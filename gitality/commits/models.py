@@ -70,8 +70,12 @@ class Commit(TimeStampedModel):
     html_url = models.URLField(_(u'commit url'))
     message = models.TextField(_(u'commit message'), blank=True)
     sha = models.CharField(_(u'commit revision sha'), max_length=256)
-    etag = models.CharField(_(u'commit etag'), max_length=256)
-    last_modified = models.DateTimeField(_(u'commit last modified'))
+    etag = models.CharField(_(u'commit etag'), max_length=256, blank=True)
+    last_modified = models.DateTimeField(
+        _(u'commit last modified'),
+        blank=True,
+        null=True
+    )
 
     author = models.ForeignKey(CommitAuthor, related_name='commits')
     project = models.ForeignKey('projects.Project', related_name='commits')

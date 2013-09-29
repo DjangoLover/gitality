@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase
+from django.test import SimpleTestCase, TestCase
 from django.conf import settings
 from django.contrib.auth.models import User
 
@@ -31,15 +31,15 @@ class ProjectFormTest(SimpleTestCase):
         self.assertIn('repo_url', form.errors)
 
 
-class ProjectModelTest(SimpleTestCase):
+class ProjectModelTest(TestCase):
     @patch('projects.models.login')
     def test_github_repo_obj(self, mock_login):
-        u = User.objects.create(username='gitality')
+        u = User.objects.create(username='g24g24g24g')
         proj = Project.objects.create(
-            name='Test', repo_url='https://github.com/dmrz/gitality',
+            name='sdf13f', repo_url='https://github.com/dmrz/gfh3h',
             user=u)
         proj.github_repo_obj
         mock_login.assert_called_once_with(
             settings.GITHUB_BOT_NAME, settings.GITHUB_BOT_PASSWORD)
         mock_login().repository.assert_called_once_with(
-            'dmrz', 'gitality')
+            'dmrz', 'gfh3h')

@@ -5,7 +5,7 @@ from django.utils import timezone
 from annoying.fields import AutoOneToOneField
 from south.modelsinspector import add_introspection_rules
 
-from core.models import TimeStampedModel, KVS
+from core.models import TimeStampedModel
 
 add_introspection_rules([], ['^annoying\.fields\.AutoOneToOneField'])
 
@@ -20,7 +20,7 @@ class CommonProgressModel(TimeStampedModel):
     additions_count = models.BigIntegerField(default=0)
     deletions_count = models.BigIntegerField(default=0)
 
-    extra_data = models.ManyToManyField(KVS, blank=True, null=True)
+    extra_data = models.ManyToManyField('core.KVS', blank=True, null=True)
 
     class Meta(TimeStampedModel.Meta):
         abstract = True
@@ -29,6 +29,9 @@ class CommonProgressModel(TimeStampedModel):
         self.additions_count += github_commit.additions
         self.deletions_count += github_commit.deletions
         self.commit_count += 1
+
+    def check_requirement(self, key, value):
+        return getattr(self, key) >= value
 
 
 class AuthorProgress(CommonProgressModel):

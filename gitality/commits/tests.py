@@ -1,4 +1,5 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
+from django.utils.timezone import now
 
 from mock import Mock
 
@@ -6,7 +7,7 @@ from .models import CommitAuthor, Commit
 from projects.models import Project
 
 
-class CommitAuthorModelTest(SimpleTestCase):
+class CommitAuthorModelTest(TestCase):
 
     def test_update_from_commit(self):
         author = CommitAuthor(author_id=99)
@@ -32,7 +33,7 @@ class CommitAuthorModelTest(SimpleTestCase):
         commit.sha = '12312312312313'
         commit.additions = 0
         commit.deletions = 0
-        commit.last_modified = '2012-09-09'
+        commit.last_modified = now()
         Commit.objects.create_from_real_commit(commit, author, project)
         self.assertEqual(Commit.objects.count(), 1)
         Commit.objects.create_from_real_commit(commit, author, project)

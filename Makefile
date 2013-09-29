@@ -115,3 +115,8 @@ collectstatic:
 
 test:
 	@$(DJANGO) test --settings=gitality.settings_test
+
+fakemigrations:
+	@echo "$(BLUE)$(PREFIX) Running fake migrations$(BE)"
+	@$(DJANGO) migrate commits 0001 --fake
+	@$(DJANGO) migrate core 0001 --fake
