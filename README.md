@@ -1,7 +1,7 @@
 gitality
 ========
 
-Django Dash participation
+Django Dash participation, http://gitality.com/
 
 
 ## Idea
