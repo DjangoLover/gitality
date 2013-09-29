@@ -4,6 +4,7 @@ from django.utils.timezone import now
 
 from mock import Mock, patch
 
+from .tasks import update_projects_state
 from .models import CommonProgressModel, ProjectProgress
 from commits.models import CommitAuthor
 from projects.models import Project
@@ -87,3 +88,16 @@ class ProgressModelsTest(TestCase):
         mock_repo.size = 0
         progress.update_state()
         self.assertFalse(mock_repo.iter_commits.called)
+
+
+class ProgressTasksTest(TestCase):
+    @patch('progresses.models.ProjectProgress.update_state')
+    def test_update_projects_state(self, mock_update):
+        u, _ = User.objects.get_or_create(username='gitality')
+        proj, _ = Project.objects.get_or_create(
+            name='Test', repo_url='https://github.com/dmrz/gitality',
+            user=u)
+        self.assertTrue(proj.progress)
+        self.assertEqual(ProjectProgress.objects.count(), 1)
+        update_projects_state()
+        mock_update.assert_called_once_with()
