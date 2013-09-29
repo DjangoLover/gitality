@@ -92,5 +92,7 @@ a:hover {
 }
 .pagination.menu .item {
     color: #555555!important;
-
- }
+}
+.pagination.menu .item.active-page {
+    color: #f36966!important;
+}
