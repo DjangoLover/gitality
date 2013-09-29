@@ -9,11 +9,13 @@ class GithubCommitManager(models.Manager):
         prev_commits = self.filter(sha=github_commit.sha)
         if prev_commits.exists():
             return None
+        if not (github_commit.sha and github_commit.html_url):
+            return None
         commit = self.create(
-            additions=github_commit.additions,
-            deletions=github_commit.deletions,
+            additions=github_commit.additions or 0,
+            deletions=github_commit.deletions or 0,
             html_url=github_commit.html_url,
-            message=github_commit.message,
+            message=github_commit.message or '',
             sha=github_commit.sha,
             etag=github_commit.etag,
             last_modified=github_commit.last_modified,
@@ -44,14 +46,14 @@ class CommitAuthor(TimeStampedModel):
 
     def update_from_commit(self, github_commit):
         author = github_commit.author
-        self.avatar_url = getattr(author, 'avatar_url', '')
-        self.bio = getattr(author, 'bio', '')
-        self.email = getattr(author, 'email', '')
-        self.gravatar_id = getattr(author, 'gravatar_id', '')
-        self.login = getattr(author, 'login', '')
-        self.name = getattr(author, 'name', '')
-        self.followers = getattr(author, 'followers', 0)
-        self.following = getattr(author, 'following', 0)
+        self.avatar_url = getattr(author, 'avatar_url', '') or ''
+        self.bio = getattr(author, 'bio', '') or ''
+        self.email = getattr(author, 'email', '') or ''
+        self.gravatar_id = getattr(author, 'gravatar_id', '') or ''
+        self.login = getattr(author, 'login', '') or ''
+        self.name = getattr(author, 'name', '') or ''
+        self.followers = getattr(author, 'followers', 0) or 0
+        self.following = getattr(author, 'following', 0) or 0
         self.save()
 
     def __unicode__(self):

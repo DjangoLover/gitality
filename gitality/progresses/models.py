@@ -78,6 +78,8 @@ class ProjectProgress(CommonProgressModel):
         from commits.models import CommitAuthor, Commit
         repo = self.project.github_repo_obj
         for com in repo.iter_commits(since=self.iso_date):
+            if not com.author:
+                continue
             author, created = CommitAuthor.objects.get_or_create(
                 author_id=com.author.id)
             if created:
