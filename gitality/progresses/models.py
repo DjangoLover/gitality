@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 from annoying.fields import AutoOneToOneField
 from south.modelsinspector import add_introspection_rules
@@ -24,6 +25,11 @@ class CommonProgressModel(TimeStampedModel):
     class Meta(TimeStampedModel.Meta):
         abstract = True
 
+    def increment_counters(self, github_commit):
+        self.additions_count += github_commit.additions
+        self.deletions_count += github_commit.deletions
+        self.commit_count += 1
+
     def check_requirement(self, key, value):
         return getattr(self, key) >= value
 
@@ -42,8 +48,9 @@ class AuthorProgress(CommonProgressModel):
     def __unicode__(self):
         return u'Progress for {}'.format(self.author)
 
-    def update_state(self):
-        raise NotImplementedError
+    def update_state(self, github_commit):
+        self.increment_counters(github_commit)
+        self.save()
 
 
 class ProjectProgress(CommonProgressModel):
@@ -62,5 +69,31 @@ class ProjectProgress(CommonProgressModel):
     def __unicode__(self):
         return u'Progress for {}'.format(self.project)
 
+    @property
+    def iso_date(self):
+        date = None
+        if self.last_commit_update:
+            date = str(self.last_commit_update).split(' ')
+            date = 'T'.join(date)
+        return date
+
     def update_state(self):
-        raise NotImplementedError
+        from commits.models import CommitAuthor, Commit
+        repo = self.project.github_repo_obj
+        if not (repo and repo.size):
+            return
+        commits = repo.iter_commits(since=self.iso_date)
+        for com in commits:
+            com = repo.commit(com.sha)
+            if not com.author:
+                continue
+            author, created = CommitAuthor.objects.get_or_create(
+                author_id=com.author.id)
+            if created:
+                author.update_from_commit(com)
+            Commit.objects.create_from_real_commit(
+                com, author, self.project)
+            self.increment_counters(com)
+            author.progress.update_state(com)
+        self.last_commit_update = timezone.now()
+        self.save()

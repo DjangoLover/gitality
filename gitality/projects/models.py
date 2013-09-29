@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 from autoslug import AutoSlugField
 from south.modelsinspector import add_introspection_rules
 from uuslug import slugify
+from github3 import login
 
 from core.models import TimeStampedModel
 from core.utils import cached_property
@@ -44,6 +45,33 @@ class Project(TimeStampedModel):
     @models.permalink
     def get_absolute_url(self):
         return ('projects:project_detail', (), {'slug': self.slug})
+
+    @property
+    def commits_count(self):
+        return self.progress.commit_count
+
+    @property
+    def additions_count(self):
+        return self.progress.additions_count
+
+    @property
+    def deletions_count(self):
+        return self.progress.deletions_count
+
+    @property
+    def latest_commits(self):
+        return self.commits.order_by('-last_modified')[:15]
+
+    @property
+    def github_repo_obj(self):
+        logged_in = login(
+            settings.GITHUB_BOT_NAME,
+            settings.GITHUB_BOT_PASSWORD)
+        vals = self.github_user_repo_name
+        if len(vals) != 2:
+            return
+        repo = logged_in.repository(*vals)
+        return repo
 
     @cached_property(ttl=0)
     def github_user_repo_name(self):

@@ -164,6 +164,12 @@ LOGGING = {
     }
 }
 
+# Provide it in local_settings
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
+GITHUB_BOT_NAME = ''
+GITHUB_BOT_PASSWORD = ''
+
 # Loading local settings
 try:
     from local_settings import *
