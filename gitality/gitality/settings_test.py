@@ -30,7 +30,6 @@ NOSE_ARGS = [
     # Packages to test
     'achievements', 'commits', 'core', 'progresses', 'projects',
 
-    '--exclude=functional'
 ]
 
 CELERY_ALWAYS_EAGER = True
