@@ -1,913 +1,901 @@
 [
 {
-    "pk": 1, 
-    "model": "projects.project", 
+    "pk": 1,
+    "model": "projects.project",
     "fields": {
-        "name": "3f17", 
-        "created": "2013-09-28T17:20:07.890Z", 
-        "modified": "2013-09-28T17:20:07.890Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/3f17/djangodash2013", 
+        "name": "3f17",
+        "created": "2013-09-28T17:20:07.890Z",
+        "modified": "2013-09-28T17:20:07.890Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/3f17/djangodash2013",
         "slug": "3f17"
     }
 },
 {
-    "pk": 2, 
-    "model": "projects.project", 
+    "pk": 2,
+    "model": "projects.project",
     "fields": {
-        "name": "6boxes", 
-        "created": "2013-09-28T17:20:07.897Z", 
-        "modified": "2013-09-28T17:20:07.897Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/romualdofernandes/djangodash2013", 
+        "name": "6boxes",
+        "created": "2013-09-28T17:20:07.897Z",
+        "modified": "2013-09-28T17:20:07.897Z",
+        "user": 2,
+        "repo_url": "https://github.com/romualdofernandes/djangodash2013",
         "slug": "6boxes"
     }
 },
 {
-    "pk": 3, 
-    "model": "projects.project", 
+    "pk": 3,
+    "model": "projects.project",
     "fields": {
-        "name": "AmazingWorks", 
-        "created": "2013-09-28T17:20:07.902Z", 
-        "modified": "2013-09-28T17:20:07.902Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/joaoleite/zezaz", 
+        "name": "AmazingWorks",
+        "created": "2013-09-28T17:20:07.902Z",
+        "modified": "2013-09-28T17:20:07.902Z",
+        "user": 2,
+        "repo_url": "https://github.com/joaoleite/zezaz",
         "slug": "amazingworks"
     }
 },
 {
-    "pk": 4, 
-    "model": "projects.project", 
+    "pk": 4,
+    "model": "projects.project",
     "fields": {
-        "name": "Bitality", 
-        "created": "2013-09-28T17:20:07.907Z", 
-        "modified": "2013-09-28T17:20:07.907Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/dmrz/gitality", 
+        "name": "Bitality",
+        "created": "2013-09-28T17:20:07.907Z",
+        "modified": "2013-09-28T17:20:07.907Z",
+        "user": 2,
+        "repo_url": "https://github.com/dmrz/gitality",
         "slug": "bitality"
     }
 },
 {
-    "pk": 5, 
-    "model": "projects.project", 
+    "pk": 5,
+    "model": "projects.project",
     "fields": {
-        "name": "Blinken Bloop", 
-        "created": "2013-09-28T17:20:07.910Z", 
-        "modified": "2013-09-28T17:20:07.910Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/lincolnloop/blinken-bloop", 
+        "name": "Blinken Bloop",
+        "created": "2013-09-28T17:20:07.910Z",
+        "modified": "2013-09-28T17:20:07.910Z",
+        "user": 2,
+        "repo_url": "https://github.com/lincolnloop/blinken-bloop",
         "slug": "blinken-bloop"
     }
 },
 {
-    "pk": 6, 
-    "model": "projects.project", 
+    "pk": 6,
+    "model": "projects.project",
     "fields": {
-        "name": "BrainPanic", 
-        "created": "2013-09-28T17:20:07.915Z", 
-        "modified": "2013-09-28T17:20:07.915Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/kharandziuk/brainstack", 
+        "name": "BrainPanic",
+        "created": "2013-09-28T17:20:07.915Z",
+        "modified": "2013-09-28T17:20:07.915Z",
+        "user": 2,
+        "repo_url": "https://github.com/kharandziuk/brainstack",
         "slug": "brainpanic"
     }
 },
 {
-    "pk": 7, 
-    "model": "projects.project", 
+    "pk": 7,
+    "model": "projects.project",
     "fields": {
-        "name": "Changers", 
-        "created": "2013-09-28T17:20:07.919Z", 
-        "modified": "2013-09-28T17:20:07.919Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/AllMyChanges/allmychanges.com", 
+        "name": "Changers",
+        "created": "2013-09-28T17:20:07.919Z",
+        "modified": "2013-09-28T17:20:07.919Z",
+        "user": 2,
+        "repo_url": "https://github.com/AllMyChanges/allmychanges.com",
         "slug": "changers"
     }
 },
 {
-    "pk": 8, 
-    "model": "projects.project", 
+    "pk": 8,
+    "model": "projects.project",
     "fields": {
-        "name": "Clana Banana", 
-        "created": "2013-09-28T17:20:07.923Z", 
-        "modified": "2013-09-28T17:20:07.923Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/xobb1t/ddash2013", 
+        "name": "Clana Banana",
+        "created": "2013-09-28T17:20:07.923Z",
+        "modified": "2013-09-28T17:20:07.923Z",
+        "user": 2,
+        "repo_url": "https://github.com/xobb1t/ddash2013",
         "slug": "clana-banana"
     }
 },
 {
-    "pk": 9, 
-    "model": "projects.project", 
+    "pk": 9,
+    "model": "projects.project",
     "fields": {
-        "name": "Clockmakers", 
-        "created": "2013-09-28T17:20:07.927Z", 
-        "modified": "2013-09-28T17:20:07.927Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/powersurge360/timeclock", 
+        "name": "Clockmakers",
+        "created": "2013-09-28T17:20:07.927Z",
+        "modified": "2013-09-28T17:20:07.927Z",
+        "user": 2,
+        "repo_url": "https://github.com/powersurge360/timeclock",
         "slug": "clockmakers"
     }
 },
 {
-    "pk": 10, 
-    "model": "projects.project", 
+    "pk": 10,
+    "model": "projects.project",
     "fields": {
-        "name": "codingmood", 
-        "created": "2013-09-28T17:20:07.930Z", 
-        "modified": "2013-09-28T17:20:07.930Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/mindinpanic/codingmood", 
+        "name": "codingmood",
+        "created": "2013-09-28T17:20:07.930Z",
+        "modified": "2013-09-28T17:20:07.930Z",
+        "user": 2,
+        "repo_url": "https://github.com/mindinpanic/codingmood",
         "slug": "codingmood"
     }
 },
 {
-    "pk": 11, 
-    "model": "projects.project", 
+    "pk": 11,
+    "model": "projects.project",
     "fields": {
-        "name": "crooked horn", 
-        "created": "2013-09-28T17:20:07.934Z", 
-        "modified": "2013-09-28T17:20:07.934Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/batment/somtron", 
+        "name": "crooked horn",
+        "created": "2013-09-28T17:20:07.934Z",
+        "modified": "2013-09-28T17:20:07.934Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/batment/somtron",
         "slug": "crooked-horn"
     }
 },
 {
-    "pk": 12, 
-    "model": "projects.project", 
+    "pk": 12,
+    "model": "projects.project",
     "fields": {
-        "name": "Cryptic Storms", 
-        "created": "2013-09-28T17:20:07.938Z", 
-        "modified": "2013-09-28T17:20:07.938Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/alexche8/djangodash2013", 
+        "name": "Cryptic Storms",
+        "created": "2013-09-28T17:20:07.938Z",
+        "modified": "2013-09-28T17:20:07.938Z",
+        "user": 2,
+        "repo_url": "https://github.com/alexche8/djangodash2013",
         "slug": "cryptic-storms"
     }
 },
 {
-    "pk": 13, 
-    "model": "projects.project", 
+    "pk": 13,
+    "model": "projects.project",
     "fields": {
-        "name": "dashcoders", 
-        "created": "2013-09-28T17:20:07.943Z", 
-        "modified": "2013-09-28T17:20:07.943Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/dashcoders/djangodash2013", 
+        "name": "dashcoders",
+        "created": "2013-09-28T17:20:07.943Z",
+        "modified": "2013-09-28T17:20:07.943Z",
+        "user": 2,
+        "repo_url": "https://github.com/dashcoders/djangodash2013",
         "slug": "dashcoders"
     }
 },
 {
-    "pk": 14, 
-    "model": "projects.project", 
+    "pk": 14,
+    "model": "projects.project",
     "fields": {
-        "name": "DCR", 
-        "created": "2013-09-28T17:20:07.946Z", 
-        "modified": "2013-09-28T17:20:07.946Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/eduardo-matos/DCR-Django-Dash-2013", 
+        "name": "DCR",
+        "created": "2013-09-28T17:20:07.946Z",
+        "modified": "2013-09-28T17:20:07.946Z",
+        "user": 2,
+        "repo_url": "https://github.com/eduardo-matos/DCR-Django-Dash-2013",
         "slug": "dcr"
     }
 },
 {
-    "pk": 15, 
-    "model": "projects.project", 
+    "pk": 15,
+    "model": "projects.project",
     "fields": {
-        "name": "DesBiz", 
-        "created": "2013-09-28T17:20:07.951Z", 
-        "modified": "2013-09-28T17:20:07.951Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/SrgyPetrov/djangodash2013", 
+        "name": "DesBiz",
+        "created": "2013-09-28T17:20:07.951Z",
+        "modified": "2013-09-28T17:20:07.951Z",
+        "user": 2,
+        "repo_url": "https://github.com/SrgyPetrov/djangodash2013",
         "slug": "desbiz"
     }
 },
 {
-    "pk": 16, 
-    "model": "projects.project", 
+    "pk": 16,
+    "model": "projects.project",
     "fields": {
-        "name": "dev8", 
-        "created": "2013-09-28T17:20:07.955Z", 
-        "modified": "2013-09-28T17:20:07.955Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/theoden/django-dash-2013", 
+        "name": "dev8",
+        "created": "2013-09-28T17:20:07.955Z",
+        "modified": "2013-09-28T17:20:07.955Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/theoden/django-dash-2013",
         "slug": "dev8"
     }
 },
 {
-    "pk": 17, 
-    "model": "projects.project", 
+    "pk": 17,
+    "model": "projects.project",
     "fields": {
-        "name": "Devil of a Sub Sub White Whale", 
-        "created": "2013-09-28T17:20:07.959Z", 
-        "modified": "2013-09-28T17:20:07.959Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/matteius/white-whale", 
+        "name": "Devil of a Sub Sub White Whale",
+        "created": "2013-09-28T17:20:07.959Z",
+        "modified": "2013-09-28T17:20:07.959Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/matteius/white-whale",
         "slug": "devil-of-a-sub-sub-white-whale"
     }
 },
 {
-    "pk": 18, 
-    "model": "projects.project", 
+    "pk": 18,
+    "model": "projects.project",
     "fields": {
-        "name": "devpod", 
-        "created": "2013-09-28T17:20:07.962Z", 
-        "modified": "2013-09-28T17:20:07.962Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/loop0/djangodash2013", 
+        "name": "devpod",
+        "created": "2013-09-28T17:20:07.962Z",
+        "modified": "2013-09-28T17:20:07.962Z",
+        "user": 2,
+        "repo_url": "https://github.com/loop0/djangodash2013",
         "slug": "devpod"
     }
 },
 {
-    "pk": 19, 
-    "model": "projects.project", 
+    "pk": 19,
+    "model": "projects.project",
     "fields": {
-        "name": "e-Legion", 
-        "created": "2013-09-28T17:20:07.966Z", 
-        "modified": "2013-09-28T17:20:07.966Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/elegion/djangodash2013", 
+        "name": "e-Legion",
+        "created": "2013-09-28T17:20:07.966Z",
+        "modified": "2013-09-28T17:20:07.966Z",
+        "user": 2,
+        "repo_url": "https://github.com/elegion/djangodash2013",
         "slug": "e-legion"
     }
 },
 {
-    "pk": 20, 
-    "model": "projects.project", 
+    "pk": 20,
+    "model": "projects.project",
     "fields": {
-        "name": "Egonomist", 
-        "created": "2013-09-28T17:20:07.971Z", 
-        "modified": "2013-09-28T17:20:07.971Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/chekunkov/egonomist", 
+        "name": "Egonomist",
+        "created": "2013-09-28T17:20:07.971Z",
+        "modified": "2013-09-28T17:20:07.971Z",
+        "user": 2,
+        "repo_url": "https://github.com/chekunkov/egonomist",
         "slug": "egonomist"
     }
 },
 {
-    "pk": 21, 
-    "model": "projects.project", 
+    "pk": 21,
+    "model": "projects.project",
     "fields": {
-        "name": "Esebe Labs", 
-        "created": "2013-09-28T17:20:07.975Z", 
-        "modified": "2013-09-28T17:20:07.975Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/EsebeLabs/djangodash2013", 
+        "name": "Esebe Labs",
+        "created": "2013-09-28T17:20:07.975Z",
+        "modified": "2013-09-28T17:20:07.975Z",
+        "user": 2,
+        "repo_url": "https://github.com/EsebeLabs/djangodash2013",
         "slug": "esebe-labs"
     }
 },
 {
-    "pk": 22, 
-    "model": "projects.project", 
+    "pk": 22,
+    "model": "projects.project",
     "fields": {
-        "name": "Evercodelab", 
-        "created": "2013-09-28T17:20:07.979Z", 
-        "modified": "2013-09-28T17:20:07.979Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/EvercodeLab/djangodash2013", 
+        "name": "Evercodelab",
+        "created": "2013-09-28T17:20:07.979Z",
+        "modified": "2013-09-28T17:20:07.979Z",
+        "user": 2,
+        "repo_url": "https://github.com/EvercodeLab/djangodash2013",
         "slug": "evercodelab"
     }
 },
 {
-    "pk": 23, 
-    "model": "projects.project", 
+    "pk": 23,
+    "model": "projects.project",
     "fields": {
-        "name": "Flaming Turkeys", 
-        "created": "2013-09-28T17:20:07.982Z", 
-        "modified": "2013-09-28T17:20:07.982Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/galuszkak/djangodash", 
+        "name": "Flaming Turkeys",
+        "created": "2013-09-28T17:20:07.982Z",
+        "modified": "2013-09-28T17:20:07.982Z",
+        "user": 2,
+        "repo_url": "https://github.com/galuszkak/djangodash",
         "slug": "flaming-turkeys"
     }
 },
 {
-    "pk": 24, 
-    "model": "projects.project", 
+    "pk": 24,
+    "model": "projects.project",
     "fields": {
-        "name": "forthcoming", 
-        "created": "2013-09-28T17:20:07.987Z", 
-        "modified": "2013-09-28T17:20:07.987Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/kfr2/django-dash-2013", 
+        "name": "forthcoming",
+        "created": "2013-09-28T17:20:07.987Z",
+        "modified": "2013-09-28T17:20:07.987Z",
+        "user": 2,
+        "repo_url": "https://github.com/kfr2/django-dash-2013",
         "slug": "forthcoming"
     }
 },
 {
-    "pk": 25, 
-    "model": "projects.project", 
+    "pk": 25,
+    "model": "projects.project",
     "fields": {
-        "name": "Future Colors", 
-        "created": "2013-09-28T17:20:07.990Z", 
-        "modified": "2013-09-28T17:20:07.990Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/futurecolors/djangodash2013", 
+        "name": "Future Colors",
+        "created": "2013-09-28T17:20:07.990Z",
+        "modified": "2013-09-28T17:20:07.990Z",
+        "user": 2,
+        "repo_url": "https://github.com/futurecolors/djangodash2013",
         "slug": "future-colors"
     }
 },
 {
-    "pk": 26, 
-    "model": "projects.project", 
+    "pk": 26,
+    "model": "projects.project",
     "fields": {
-        "name": "Gatsby", 
-        "created": "2013-09-28T17:20:07.994Z", 
-        "modified": "2013-09-28T17:20:07.994Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/vasyabigi/allmywishes", 
+        "name": "Gatsby",
+        "created": "2013-09-28T17:20:07.994Z",
+        "modified": "2013-09-28T17:20:07.994Z",
+        "user": 2,
+        "repo_url": "https://github.com/vasyabigi/allmywishes",
         "slug": "gatsby"
     }
 },
 {
-    "pk": 27, 
-    "model": "projects.project", 
+    "pk": 27,
+    "model": "projects.project",
     "fields": {
-        "name": "GisThis", 
-        "created": "2013-09-28T17:20:07.999Z", 
-        "modified": "2013-09-28T17:20:07.999Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/rootart/gitthis", 
+        "name": "GisThis",
+        "created": "2013-09-28T17:20:07.999Z",
+        "modified": "2013-09-28T17:20:07.999Z",
+        "user": 2,
+        "repo_url": "https://github.com/rootart/gitthis",
         "slug": "gisthis"
     }
 },
 {
-    "pk": 28, 
-    "model": "projects.project", 
+    "pk": 28,
+    "model": "projects.project",
     "fields": {
-        "name": "Hameedullah & Salman", 
-        "created": "2013-09-28T17:20:08.003Z", 
-        "modified": "2013-09-28T17:20:08.003Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/hameedullah/djangodash2013", 
+        "name": "Hameedullah & Salman",
+        "created": "2013-09-28T17:20:08.003Z",
+        "modified": "2013-09-28T17:20:08.003Z",
+        "user": 2,
+        "repo_url": "https://github.com/hameedullah/djangodash2013",
         "slug": "hameedullah-salman"
     }
 },
 {
-    "pk": 29, 
-    "model": "projects.project", 
+    "pk": 29,
+    "model": "projects.project",
     "fields": {
-        "name": "hashcode", 
-        "created": "2013-09-28T17:20:08.007Z", 
-        "modified": "2013-09-28T17:20:08.007Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/hash-code/djangodash2013", 
+        "name": "hashcode",
+        "created": "2013-09-28T17:20:08.007Z",
+        "modified": "2013-09-28T17:20:08.007Z",
+        "user": 2,
+        "repo_url": "https://github.com/hash-code/djangodash2013",
         "slug": "hashcode"
     }
 },
 {
-    "pk": 30, 
-    "model": "projects.project", 
+    "pk": 30,
+    "model": "projects.project",
     "fields": {
-        "name": "Hellfire", 
-        "created": "2013-09-28T17:20:08.011Z", 
-        "modified": "2013-09-28T17:20:08.011Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/alagappanr/djangodash2013", 
+        "name": "Hellfire",
+        "created": "2013-09-28T17:20:08.011Z",
+        "modified": "2013-09-28T17:20:08.011Z",
+        "user": 2,
+        "repo_url": "https://github.com/alagappanr/djangodash2013",
         "slug": "hellfire"
     }
 },
 {
-    "pk": 31, 
-    "model": "projects.project", 
+    "pk": 31,
+    "model": "projects.project",
     "fields": {
-        "name": "Ildus", 
-        "created": "2013-09-28T17:20:08.015Z", 
-        "modified": "2013-09-28T17:20:08.015Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/IldusSadykov/Blog", 
+        "name": "Ildus",
+        "created": "2013-09-28T17:20:08.015Z",
+        "modified": "2013-09-28T17:20:08.015Z",
+        "user": 2,
+        "repo_url": "https://github.com/IldusSadykov/Blog",
         "slug": "ildus"
     }
 },
 {
-    "pk": 32, 
-    "model": "projects.project", 
+    "pk": 32,
+    "model": "projects.project",
     "fields": {
-        "name": "Install Requires", 
-        "created": "2013-09-28T17:20:08.019Z", 
-        "modified": "2013-09-28T17:20:08.019Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/izidormatusov/installrequires", 
+        "name": "Install Requires",
+        "created": "2013-09-28T17:20:08.019Z",
+        "modified": "2013-09-28T17:20:08.019Z",
+        "user": 2,
+        "repo_url": "https://github.com/izidormatusov/installrequires",
         "slug": "install-requires"
     }
 },
 {
-    "pk": 33, 
-    "model": "projects.project", 
+    "pk": 33,
+    "model": "projects.project",
     "fields": {
-        "name": "krkmetal", 
-        "created": "2013-09-28T17:20:08.022Z", 
-        "modified": "2013-09-28T17:20:08.023Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/krkmetal/djangodash2013", 
+        "name": "krkmetal",
+        "created": "2013-09-28T17:20:08.022Z",
+        "modified": "2013-09-28T17:20:08.023Z",
+        "user": 2,
+        "repo_url": "https://github.com/krkmetal/djangodash2013",
         "slug": "krkmetal"
     }
 },
 {
-    "pk": 34, 
-    "model": "projects.project", 
+    "pk": 34,
+    "model": "projects.project",
     "fields": {
-        "name": "LifeOfPy", 
-        "created": "2013-09-28T17:20:08.026Z", 
-        "modified": "2013-09-28T17:20:08.026Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/sarupbanskota/carpet", 
+        "name": "LifeOfPy",
+        "created": "2013-09-28T17:20:08.026Z",
+        "modified": "2013-09-28T17:20:08.026Z",
+        "user": 2,
+        "repo_url": "https://github.com/sarupbanskota/carpet",
         "slug": "lifeofpy"
     }
 },
 {
-    "pk": 35, 
-    "model": "projects.project", 
+    "pk": 35,
+    "model": "projects.project",
     "fields": {
-        "name": "Mahou Shoujo 200APM", 
-        "created": "2013-09-28T17:20:08.031Z", 
-        "modified": "2013-09-28T17:20:08.031Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/6/djangodash2013", 
+        "name": "Mahou Shoujo 200APM",
+        "created": "2013-09-28T17:20:08.031Z",
+        "modified": "2013-09-28T17:20:08.031Z",
+        "user": 2,
+        "repo_url": "https://github.com/6/djangodash2013",
         "slug": "mahou-shoujo-200apm"
     }
 },
 {
-    "pk": 36, 
-    "model": "projects.project", 
+    "pk": 36,
+    "model": "projects.project",
     "fields": {
-        "name": "Maineiacs", 
-        "created": "2013-09-28T17:20:08.035Z", 
-        "modified": "2013-09-28T17:20:08.035Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/kencochrane/scorinator", 
+        "name": "Maineiacs",
+        "created": "2013-09-28T17:20:08.035Z",
+        "modified": "2013-09-28T17:20:08.035Z",
+        "user": 2,
+        "repo_url": "https://github.com/kencochrane/scorinator",
         "slug": "maineiacs"
     }
 },
 {
-    "pk": 37, 
-    "model": "projects.project", 
+    "pk": 37,
+    "model": "projects.project",
     "fields": {
-        "name": "Melbourne Warriors", 
-        "created": "2013-09-28T17:20:08.039Z", 
-        "modified": "2013-09-28T17:20:08.039Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/vertis/djangodash2013", 
+        "name": "Melbourne Warriors",
+        "created": "2013-09-28T17:20:08.039Z",
+        "modified": "2013-09-28T17:20:08.039Z",
+        "user": 2,
+        "repo_url": "https://github.com/vertis/djangodash2013",
         "slug": "melbourne-warriors"
     }
 },
 {
-    "pk": 38, 
-    "model": "projects.project", 
+    "pk": 38,
+    "model": "projects.project",
     "fields": {
-        "name": "Mentor Up", 
-        "created": "2013-09-28T17:20:08.043Z", 
-        "modified": "2013-09-28T17:20:08.043Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/briandant/mentor_up", 
+        "name": "Mentor Up",
+        "created": "2013-09-28T17:20:08.043Z",
+        "modified": "2013-09-28T17:20:08.043Z",
+        "user": 2,
+        "repo_url": "https://github.com/briandant/mentor_up",
         "slug": "mentor-up"
     }
 },
 {
-    "pk": 39, 
-    "model": "projects.project", 
+    "pk": 39,
+    "model": "projects.project",
     "fields": {
-        "name": "Mily", 
-        "created": "2013-09-28T17:20:08.047Z", 
-        "modified": "2013-09-28T17:20:08.047Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/abhi3188/djangodash13", 
+        "name": "Mily",
+        "created": "2013-09-28T17:20:08.047Z",
+        "modified": "2013-09-28T17:20:08.047Z",
+        "user": 2,
+        "repo_url": "https://github.com/abhi3188/djangodash13",
         "slug": "mily"
     }
 },
 {
-    "pk": 40, 
-    "model": "projects.project", 
+    "pk": 40,
+    "model": "projects.project",
     "fields": {
-        "name": "MMo.IT", 
-        "created": "2013-09-28T17:20:08.051Z", 
-        "modified": "2013-09-28T17:20:08.051Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/sirmmo/mmonet", 
+        "name": "MMo.IT",
+        "created": "2013-09-28T17:20:08.051Z",
+        "modified": "2013-09-28T17:20:08.051Z",
+        "user": 2,
+        "repo_url": "https://github.com/sirmmo/mmonet",
         "slug": "mmo-it"
     }
 },
 {
-    "pk": 41, 
-    "model": "projects.project", 
+    "pk": 41,
+    "model": "projects.project",
     "fields": {
-        "name": "mozfighters", 
-        "created": "2013-09-28T17:20:08.054Z", 
-        "modified": "2013-09-28T17:20:08.054Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/comzeradd/blackhole", 
+        "name": "mozfighters",
+        "created": "2013-09-28T17:20:08.054Z",
+        "modified": "2013-09-28T17:20:08.054Z",
+        "user": 2,
+        "repo_url": "https://github.com/comzeradd/blackhole",
         "slug": "mozfighters"
     }
 },
 {
-    "pk": 42, 
-    "model": "projects.project", 
+    "pk": 42,
+    "model": "projects.project",
     "fields": {
-        "name": "Muffins on Dope", 
-        "created": "2013-09-28T17:20:08.058Z", 
-        "modified": "2013-09-28T17:20:08.058Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/muffins-on-dope/bakery", 
+        "name": "Muffins on Dope",
+        "created": "2013-09-28T17:20:08.058Z",
+        "modified": "2013-09-28T17:20:08.058Z",
+        "user": 2,
+        "repo_url": "https://github.com/muffins-on-dope/bakery",
         "slug": "muffins-on-dope"
     }
 },
 {
-    "pk": 43, 
-    "model": "projects.project", 
+    "pk": 43,
+    "model": "projects.project",
     "fields": {
-        "name": "Networky", 
-        "created": "2013-09-28T17:20:08.063Z", 
-        "modified": "2013-09-28T17:20:08.063Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/aladagemre/django-friendship-network", 
+        "name": "Networky",
+        "created": "2013-09-28T17:20:08.063Z",
+        "modified": "2013-09-28T17:20:08.063Z",
+        "user": 2,
+        "repo_url": "https://github.com/aladagemre/django-friendship-network",
         "slug": "networky"
     }
 },
 {
-    "pk": 44, 
-    "model": "projects.project", 
+    "pk": 44,
+    "model": "projects.project",
     "fields": {
-        "name": "nsupdate.info", 
-        "created": "2013-09-28T17:20:08.066Z", 
-        "modified": "2013-09-28T17:20:08.067Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/asmaps/nsupdate.info", 
+        "name": "nsupdate.info",
+        "created": "2013-09-28T17:20:08.066Z",
+        "modified": "2013-09-28T17:20:08.067Z",
+        "user": 2,
+        "repo_url": "https://github.com/asmaps/nsupdate.info",
         "slug": "nsupdate-info"
     }
 },
 {
-    "pk": 45, 
-    "model": "projects.project", 
+    "pk": 45,
+    "model": "projects.project",
     "fields": {
-        "name": "nvbn", 
-        "created": "2013-09-28T17:20:08.071Z", 
-        "modified": "2013-09-28T17:20:08.071Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/nvbn/deploy_trigger", 
+        "name": "nvbn",
+        "created": "2013-09-28T17:20:08.071Z",
+        "modified": "2013-09-28T17:20:08.071Z",
+        "user": 2,
+        "repo_url": "https://github.com/nvbn/deploy_trigger",
         "slug": "nvbn"
     }
 },
 {
-    "pk": 46, 
-    "model": "projects.project", 
+    "pk": 46,
+    "model": "projects.project",
     "fields": {
-        "name": "OpenSourceSaguenay", 
-        "created": "2013-09-28T17:20:08.074Z", 
-        "modified": "2013-09-28T17:20:08.074Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/OpenSourceSag/django-dash2013", 
+        "name": "OpenSourceSaguenay",
+        "created": "2013-09-28T17:20:08.074Z",
+        "modified": "2013-09-28T17:20:08.074Z",
+        "user": 2,
+        "repo_url": "https://github.com/OpenSourceSag/django-dash2013",
         "slug": "opensourcesaguenay"
     }
 },
 {
-    "pk": 47, 
-    "model": "projects.project", 
+    "pk": 47,
+    "model": "projects.project",
     "fields": {
-        "name": "Ornumental", 
-        "created": "2013-09-28T17:20:08.078Z", 
-        "modified": "2013-09-28T17:20:08.078Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/jimfmunro/djangodash2013", 
+        "name": "Ornumental",
+        "created": "2013-09-28T17:20:08.078Z",
+        "modified": "2013-09-28T17:20:08.078Z",
+        "user": 2,
+        "repo_url": "https://github.com/jimfmunro/djangodash2013",
         "slug": "ornumental"
     }
 },
 {
-    "pk": 48, 
-    "model": "projects.project", 
+    "pk": 48,
+    "model": "projects.project",
     "fields": {
-        "name": "Papaconchoco", 
-        "created": "2013-09-28T17:20:08.083Z", 
-        "modified": "2013-09-28T17:20:08.083Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/papaconchoco/djangodash2013", 
+        "name": "Papaconchoco",
+        "created": "2013-09-28T17:20:08.083Z",
+        "modified": "2013-09-28T17:20:08.083Z",
+        "user": 2,
+        "repo_url": "https://github.com/papaconchoco/djangodash2013",
         "slug": "papaconchoco"
     }
 },
 {
-    "pk": 49, 
-    "model": "projects.project", 
+    "pk": 49,
+    "model": "projects.project",
     "fields": {
-        "name": "Pitombeiros", 
-        "created": "2013-09-28T17:20:08.087Z", 
-        "modified": "2013-09-28T17:20:08.087Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/romulojales/to-be-musician", 
+        "name": "Pitombeiros",
+        "created": "2013-09-28T17:20:08.087Z",
+        "modified": "2013-09-28T17:20:08.087Z",
+        "user": 2,
+        "repo_url": "https://github.com/romulojales/to-be-musician",
         "slug": "pitombeiros"
     }
 },
 {
-    "pk": 50, 
-    "model": "projects.project", 
+    "pk": 50,
+    "model": "projects.project",
     "fields": {
-        "name": "platypi", 
-        "created": "2013-09-28T17:20:08.091Z", 
-        "modified": "2013-09-28T17:20:08.091Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/nnrcschmdt/djangodash2013", 
+        "name": "platypi",
+        "created": "2013-09-28T17:20:08.091Z",
+        "modified": "2013-09-28T17:20:08.091Z",
+        "user": 2,
+        "repo_url": "https://github.com/nnrcschmdt/djangodash2013",
         "slug": "platypi"
     }
 },
 {
-    "pk": 51, 
-    "model": "projects.project", 
+    "pk": 51,
+    "model": "projects.project",
     "fields": {
-        "name": "Puccis", 
-        "created": "2013-09-28T17:20:08.095Z", 
-        "modified": "2013-09-28T17:20:08.095Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/grunskis/groupie", 
+        "name": "Puccis",
+        "created": "2013-09-28T17:20:08.095Z",
+        "modified": "2013-09-28T17:20:08.095Z",
+        "user": 2,
+        "repo_url": "https://github.com/grunskis/groupie",
         "slug": "puccis"
     }
 },
 {
-    "pk": 52, 
-    "model": "projects.project", 
+    "pk": 53,
+    "model": "projects.project",
     "fields": {
-        "name": "PyGeek", 
-        "created": "2013-09-28T17:20:08.099Z", 
-        "modified": "2013-09-28T17:20:08.099Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/bansalsamarth", 
-        "slug": "pygeek"
-    }
-},
-{
-    "pk": 53, 
-    "model": "projects.project", 
-    "fields": {
-        "name": "Pyjamas", 
-        "created": "2013-09-28T17:20:08.103Z", 
-        "modified": "2013-09-28T17:20:08.103Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/pyjamas-djangodash/djangodash2013", 
+        "name": "Pyjamas",
+        "created": "2013-09-28T17:20:08.103Z",
+        "modified": "2013-09-28T17:20:08.103Z",
+        "user": 2,
+        "repo_url": "https://github.com/pyjamas-djangodash/djangodash2013",
         "slug": "pyjamas"
     }
 },
 {
-    "pk": 54, 
-    "model": "projects.project", 
+    "pk": 54,
+    "model": "projects.project",
     "fields": {
-        "name": "Rebranch", 
-        "created": "2013-09-28T17:20:08.108Z", 
-        "modified": "2013-09-28T17:20:08.108Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/Chodex/djangodash2013", 
+        "name": "Rebranch",
+        "created": "2013-09-28T17:20:08.108Z",
+        "modified": "2013-09-28T17:20:08.108Z",
+        "user": 2,
+        "repo_url": "https://github.com/Chodex/djangodash2013",
         "slug": "rebranch"
     }
 },
 {
-    "pk": 55, 
-    "model": "projects.project", 
+    "pk": 55,
+    "model": "projects.project",
     "fields": {
-        "name": "Reddoid", 
-        "created": "2013-09-28T17:20:08.112Z", 
-        "modified": "2013-09-28T17:20:08.112Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/dudarev/reddoid", 
+        "name": "Reddoid",
+        "created": "2013-09-28T17:20:08.112Z",
+        "modified": "2013-09-28T17:20:08.112Z",
+        "user": 2,
+        "repo_url": "https://github.com/dudarev/reddoid",
         "slug": "reddoid"
     }
 },
 {
-    "pk": 56, 
-    "model": "projects.project", 
+    "pk": 56,
+    "model": "projects.project",
     "fields": {
-        "name": "Release the Kraken", 
-        "created": "2013-09-28T17:20:08.115Z", 
-        "modified": "2013-09-28T17:20:08.116Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/ak3n/torrentstream", 
+        "name": "Release the Kraken",
+        "created": "2013-09-28T17:20:08.115Z",
+        "modified": "2013-09-28T17:20:08.116Z",
+        "user": 2,
+        "repo_url": "https://github.com/ak3n/torrentstream",
         "slug": "release-the-kraken"
     }
 },
 {
-    "pk": 57, 
-    "model": "projects.project", 
+    "pk": 57,
+    "model": "projects.project",
     "fields": {
-        "name": "ROLL studio", 
-        "created": "2013-09-28T17:20:08.120Z", 
-        "modified": "2013-09-28T17:20:08.120Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/rollstudio/djangodash-2013", 
+        "name": "ROLL studio",
+        "created": "2013-09-28T17:20:08.120Z",
+        "modified": "2013-09-28T17:20:08.120Z",
+        "user": 2,
+        "repo_url": "https://github.com/rollstudio/djangodash-2013",
         "slug": "roll-studio"
     }
 },
 {
-    "pk": 58, 
-    "model": "projects.project", 
+    "pk": 58,
+    "model": "projects.project",
     "fields": {
-        "name": "Shultais Group", 
-        "created": "2013-09-28T17:20:08.125Z", 
-        "modified": "2013-09-28T17:20:08.125Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/shultais/lesshms", 
+        "name": "Shultais Group",
+        "created": "2013-09-28T17:20:08.125Z",
+        "modified": "2013-09-28T17:20:08.125Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/shultais/lesshms",
         "slug": "shultais-group"
     }
 },
 {
-    "pk": 59, 
-    "model": "projects.project", 
+    "pk": 59,
+    "model": "projects.project",
     "fields": {
-        "name": "sophilabs", 
-        "created": "2013-09-28T17:20:08.129Z", 
-        "modified": "2013-09-28T17:20:08.129Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/sophilabs/djangoboot", 
+        "name": "sophilabs",
+        "created": "2013-09-28T17:20:08.129Z",
+        "modified": "2013-09-28T17:20:08.129Z",
+        "user": 2,
+        "repo_url": "https://github.com/sophilabs/djangoboot",
         "slug": "sophilabs"
     }
 },
 {
-    "pk": 60, 
-    "model": "projects.project", 
+    "pk": 60,
+    "model": "projects.project",
     "fields": {
-        "name": "ssbb vs all", 
-        "created": "2013-09-28T17:20:08.133Z", 
-        "modified": "2013-09-28T17:20:08.133Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/ssbb/djangodash2013", 
+        "name": "ssbb vs all",
+        "created": "2013-09-28T17:20:08.133Z",
+        "modified": "2013-09-28T17:20:08.133Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/ssbb/djangodash2013",
         "slug": "ssbb-vs-all"
     }
 },
 {
-    "pk": 61, 
-    "model": "projects.project", 
+    "pk": 61,
+    "model": "projects.project",
     "fields": {
-        "name": "Three Followers", 
-        "created": "2013-09-28T17:20:08.137Z", 
-        "modified": "2013-09-28T17:20:08.137Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/mfa/djangodash2013", 
+        "name": "Three Followers",
+        "created": "2013-09-28T17:20:08.137Z",
+        "modified": "2013-09-28T17:20:08.137Z",
+        "user": 2,
+        "repo_url": "https://github.com/mfa/djangodash2013",
         "slug": "three-followers"
     }
 },
 {
-    "pk": 62, 
-    "model": "projects.project", 
+    "pk": 62,
+    "model": "projects.project",
     "fields": {
-        "name": "transcode", 
-        "created": "2013-09-28T17:20:08.141Z", 
-        "modified": "2013-09-28T17:20:08.141Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/transcode/djangodash2013", 
+        "name": "transcode",
+        "created": "2013-09-28T17:20:08.141Z",
+        "modified": "2013-09-28T17:20:08.141Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/transcode/djangodash2013",
         "slug": "transcode"
     }
 },
 {
-    "pk": 63, 
-    "model": "projects.project", 
+    "pk": 63,
+    "model": "projects.project",
     "fields": {
-        "name": "Travelog", 
-        "created": "2013-09-28T17:20:08.146Z", 
-        "modified": "2013-09-28T17:20:08.146Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/saippuakauppias/travelog", 
+        "name": "Travelog",
+        "created": "2013-09-28T17:20:08.146Z",
+        "modified": "2013-09-28T17:20:08.146Z",
+        "user": 2,
+        "repo_url": "https://github.com/saippuakauppias/travelog",
         "slug": "travelog"
     }
 },
 {
-    "pk": 64, 
-    "model": "projects.project", 
+    "pk": 64,
+    "model": "projects.project",
     "fields": {
-        "name": "Two Robots", 
-        "created": "2013-09-28T17:20:08.150Z", 
-        "modified": "2013-09-28T17:20:08.150Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/rvause/djangodash2013", 
+        "name": "Two Robots",
+        "created": "2013-09-28T17:20:08.150Z",
+        "modified": "2013-09-28T17:20:08.150Z",
+        "user": 2,
+        "repo_url": "https://github.com/rvause/djangodash2013",
         "slug": "two-robots"
     }
 },
 {
-    "pk": 65, 
-    "model": "projects.project", 
+    "pk": 65,
+    "model": "projects.project",
     "fields": {
-        "name": "Uncool Inc.", 
-        "created": "2013-09-28T17:20:08.155Z", 
-        "modified": "2013-09-28T17:20:08.155Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/GeneralMaximus/codegenius", 
+        "name": "Uncool Inc.",
+        "created": "2013-09-28T17:20:08.155Z",
+        "modified": "2013-09-28T17:20:08.155Z",
+        "user": 2,
+        "repo_url": "https://github.com/GeneralMaximus/codegenius",
         "slug": "uncool-inc"
     }
 },
 {
-    "pk": 66, 
-    "model": "projects.project", 
+    "pk": 66,
+    "model": "projects.project",
     "fields": {
-        "name": "upchk", 
-        "created": "2013-09-28T17:20:08.159Z", 
-        "modified": "2013-09-28T17:20:08.159Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/winnukem/upchk", 
+        "name": "upchk",
+        "created": "2013-09-28T17:20:08.159Z",
+        "modified": "2013-09-28T17:20:08.159Z",
+        "user": 2,
+        "repo_url": "https://github.com/winnukem/upchk",
         "slug": "upchk"
     }
 },
 {
-    "pk": 67, 
-    "model": "projects.project", 
+    "pk": 67,
+    "model": "projects.project",
     "fields": {
-        "name": "Valzevul's team", 
-        "created": "2013-09-28T17:20:08.162Z", 
-        "modified": "2013-09-28T17:20:08.162Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/valzevul/django-contest", 
+        "name": "Valzevul's team",
+        "created": "2013-09-28T17:20:08.162Z",
+        "modified": "2013-09-28T17:20:08.162Z",
+        "user": 2,
+        "repo_url": "https://github.com/valzevul/django-contest",
         "slug": "valzevuls-team"
     }
 },
 {
-    "pk": 68, 
-    "model": "projects.project", 
+    "pk": 68,
+    "model": "projects.project",
     "fields": {
-        "name": "Veikab", 
-        "created": "2013-09-28T17:20:08.167Z", 
-        "modified": "2013-09-28T17:20:08.167Z", 
-        "user": 2, 
-        "repo_url": "https://bitbucket.org/veikab/djangodash2013", 
+        "name": "Veikab",
+        "created": "2013-09-28T17:20:08.167Z",
+        "modified": "2013-09-28T17:20:08.167Z",
+        "user": 2,
+        "repo_url": "https://bitbucket.org/veikab/djangodash2013",
         "slug": "veikab"
     }
 },
 {
-    "pk": 69, 
-    "model": "projects.project", 
+    "pk": 69,
+    "model": "projects.project",
     "fields": {
-        "name": "VM-team", 
-        "created": "2013-09-28T17:20:08.171Z", 
-        "modified": "2013-09-28T17:20:08.171Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/Quard/SparerTid", 
+        "name": "VM-team",
+        "created": "2013-09-28T17:20:08.171Z",
+        "modified": "2013-09-28T17:20:08.171Z",
+        "user": 2,
+        "repo_url": "https://github.com/Quard/SparerTid",
         "slug": "vm-team"
     }
 },
 {
-    "pk": 70, 
-    "model": "projects.project", 
+    "pk": 70,
+    "model": "projects.project",
     "fields": {
-        "name": "WB-Tech", 
-        "created": "2013-09-28T17:20:08.175Z", 
-        "modified": "2013-09-28T17:20:08.175Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/WB-Tecnologies/djangodash2013", 
+        "name": "WB-Tech",
+        "created": "2013-09-28T17:20:08.175Z",
+        "modified": "2013-09-28T17:20:08.175Z",
+        "user": 2,
+        "repo_url": "https://github.com/WB-Tecnologies/djangodash2013",
         "slug": "wb-tech"
     }
 },
 {
-    "pk": 71, 
-    "model": "projects.project", 
+    "pk": 71,
+    "model": "projects.project",
     "fields": {
-        "name": "Web For Good", 
-        "created": "2013-09-28T17:20:08.178Z", 
-        "modified": "2013-09-28T17:20:08.178Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/worthwhile/django_dash_2013", 
+        "name": "Web For Good",
+        "created": "2013-09-28T17:20:08.178Z",
+        "modified": "2013-09-28T17:20:08.178Z",
+        "user": 2,
+        "repo_url": "https://github.com/worthwhile/django_dash_2013",
         "slug": "web-for-good"
     }
 },
 {
-    "pk": 72, 
-    "model": "projects.project", 
+    "pk": 72,
+    "model": "projects.project",
     "fields": {
-        "name": "WebRiders Duo", 
-        "created": "2013-09-28T17:20:08.183Z", 
-        "modified": "2013-09-28T17:20:08.183Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/webriders/djagon", 
+        "name": "WebRiders Duo",
+        "created": "2013-09-28T17:20:08.183Z",
+        "modified": "2013-09-28T17:20:08.183Z",
+        "user": 2,
+        "repo_url": "https://github.com/webriders/djagon",
         "slug": "webriders-duo"
     }
 },
 {
-    "pk": 73, 
-    "model": "projects.project", 
+    "pk": 73,
+    "model": "projects.project",
     "fields": {
-        "name": "WebRiders Uno", 
-        "created": "2013-09-28T17:20:08.187Z", 
-        "modified": "2013-09-28T17:20:08.187Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/webriders/pywars", 
+        "name": "WebRiders Uno",
+        "created": "2013-09-28T17:20:08.187Z",
+        "modified": "2013-09-28T17:20:08.187Z",
+        "user": 2,
+        "repo_url": "https://github.com/webriders/pywars",
         "slug": "webriders-uno"
     }
 },
 {
-    "pk": 74, 
-    "model": "projects.project", 
+    "pk": 74,
+    "model": "projects.project",
     "fields": {
-        "name": "ya-ma-kun", 
-        "created": "2013-09-28T17:20:08.190Z", 
-        "modified": "2013-09-28T17:20:08.190Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/imom0/yamakun", 
+        "name": "ya-ma-kun",
+        "created": "2013-09-28T17:20:08.190Z",
+        "modified": "2013-09-28T17:20:08.190Z",
+        "user": 2,
+        "repo_url": "https://github.com/imom0/yamakun",
         "slug": "ya-ma-kun"
     }
 },
 {
-    "pk": 75, 
-    "model": "projects.project", 
+    "pk": 75,
+    "model": "projects.project",
     "fields": {
-        "name": "Yarp", 
-        "created": "2013-09-28T17:20:08.197Z", 
-        "modified": "2013-09-28T17:20:08.197Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/madra/yarp", 
+        "name": "Yarp",
+        "created": "2013-09-28T17:20:08.197Z",
+        "modified": "2013-09-28T17:20:08.197Z",
+        "user": 2,
+        "repo_url": "https://github.com/madra/yarp",
         "slug": "yarp"
     }
 },
 {
-    "pk": 76, 
-    "model": "projects.project", 
+    "pk": 76,
+    "model": "projects.project",
     "fields": {
-        "name": "Zapix", 
-        "created": "2013-09-28T17:20:08.200Z", 
-        "modified": "2013-09-28T17:20:08.200Z", 
-        "user": 2, 
-        "repo_url": "https://github.com/Zapix/running-game", 
+        "name": "Zapix",
+        "created": "2013-09-28T17:20:08.200Z",
+        "modified": "2013-09-28T17:20:08.200Z",
+        "user": 2,
+        "repo_url": "https://github.com/Zapix/running-game",
         "slug": "zapix"
     }
 }

@@ -80,7 +80,10 @@ class ProjectProgress(CommonProgressModel):
     def update_state(self):
         from commits.models import CommitAuthor, Commit
         repo = self.project.github_repo_obj
-        for com in repo.iter_commits(since=self.iso_date):
+        if not (repo and repo.size):
+            return
+        commits = repo.iter_commits(since=self.iso_date)
+        for com in commits:
             com = repo.commit(com.sha)
             if not com.author:
                 continue

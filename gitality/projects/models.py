@@ -51,7 +51,10 @@ class Project(TimeStampedModel):
         logged_in = login(
             settings.GITHUB_BOT_NAME,
             settings.GITHUB_BOT_PASSWORD)
-        repo = logged_in.repository(*self.github_user_repo_name)
+        vals = self.github_user_repo_name
+        if len(vals) != 2:
+            return
+        repo = logged_in.repository(*vals)
         return repo
 
     @cached_property(ttl=0)

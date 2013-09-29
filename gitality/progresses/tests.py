@@ -76,3 +76,14 @@ class ProgressModelsTest(TestCase):
         self.assertEqual(progress.commit_count, 1)
         self.assertEqual(progress.additions_count, 2)
         self.assertEqual(progress.deletions_count, 3)
+
+    @patch('projects.models.Project.github_repo_obj')
+    def test_project_update_state_empty_repo(self, mock_repo):
+        u, _ = User.objects.get_or_create(username='gitality')
+        proj, _ = Project.objects.get_or_create(
+            name='Test', repo_url='https://github.com/dmrz/gitality',
+            user=u)
+        progress = proj.progress
+        mock_repo.size = 0
+        progress.update_state()
+        self.assertFalse(mock_repo.iter_commits.called)
