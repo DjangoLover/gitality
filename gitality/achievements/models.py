@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from core.models import TimeStampedModel
 
+from .utils import get_logic_choices
+
 
 class Achievement(TimeStampedModel):
     """
@@ -32,9 +34,21 @@ class Achievement(TimeStampedModel):
 
     points = models.PositiveIntegerField(_(u'points'), default=10)
 
+    logic_class = models.CharField(
+        _(u'achievement logic class'),
+        choices=get_logic_choices(),
+        max_length=256)
+
     class Meta(TimeStampedModel.Meta):
         verbose_name = _(u'achievement')
         verbose_name_plural = _(u'achievements')
 
     def __unicode__(self):
         return u'{}'.format(self.name)
+
+    @property
+    def logic(self):
+        """
+        Returns achievement logic instance.
+        """
+        return self.logic_class(self)

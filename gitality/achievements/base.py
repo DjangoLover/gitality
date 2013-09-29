@@ -13,5 +13,5 @@ class BaseAchievementLogic(object):
         self.entity = entity
 
     @abc.abstractmethod
-    def inspect(self):
+    def inspect(self, user):
         raise NotImplementedError
