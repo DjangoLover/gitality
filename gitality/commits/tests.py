@@ -23,7 +23,8 @@ class CommitAuthorModelTest(SimpleTestCase):
         self.assertEqual(author.followers, 3)
 
     def test_create_from_real_commit(self):
-        author = CommitAuthor.objects.create(author_id=99)
+        author = CommitAuthor.objects.create(
+            author_id=99, login='asdad123')
         project = Project.objects.create(
             user_id=1, name='1', repo_url='http://google.com')
         self.assertEqual(Commit.objects.count(), 0)

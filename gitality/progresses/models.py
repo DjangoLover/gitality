@@ -82,7 +82,8 @@ class ProjectProgress(CommonProgressModel):
                 author_id=com.author.id)
             if created:
                 author.update_from_commit(com)
-            Commit.create_from_real_commit(com, author, self.project)
+            Commit.objects.create_from_real_commit(
+                com, author, self.project)
             self.increment_counters(com)
             author.progress.update_state(com)
         self.last_commit_update = timezone.now()
