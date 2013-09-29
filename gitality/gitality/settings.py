@@ -114,9 +114,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    'achievements',
-    'commits',
     'core',
+    'commits',
+    'achievements',
     'progresses',
     'projects',
 

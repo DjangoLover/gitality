@@ -79,7 +79,7 @@ class AuthorProgress(CommonProgressModel):
         verbose_name_plural = _(u'commit author progresses')
 
     def __unicode__(self):
-        return u'Progress for {}'.format(self.author)
+        return u'Progress for author #{}'.format(self.author_id)
 
     def update_state(self, github_commit):
         self.increment_counters(github_commit)
@@ -103,7 +103,7 @@ class ProjectProgress(CommonProgressModel):
         verbose_name_plural = _(u'project progresses')
 
     def __unicode__(self):
-        return u'Progress for {}'.format(self.project)
+        return u'Progress for project #{}'.format(self.project_id)
 
     @property
     def iso_date(self):

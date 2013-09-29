@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse_lazy
+from django.db.models import Count
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -21,6 +22,11 @@ from .models import Project
 class ProjectListView(ListView):
 
     model = Project
+
+    def get_queryset(self):
+        qs = super(ProjectListView, self).get_queryset()
+        return qs.select_related('progress')
+
 
 project_list = ProjectListView.as_view()
 
