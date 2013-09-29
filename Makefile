@@ -121,3 +121,6 @@ fakemigrations:
 	@$(DJANGO) migrate achievements 0001 --fake
 	@$(DJANGO) migrate commits 0001 --fake
 	@$(DJANGO) migrate core 0001 --fake
+
+celery:
+	@$(DJANGO) celery worker -B

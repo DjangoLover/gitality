@@ -1,6 +1,9 @@
 # Django settings for gitality project.
 import os.path
 
+import djcelery
+
+djcelery.setup_loader()
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
@@ -121,9 +124,19 @@ INSTALLED_APPS = (
     'projects',
 
     # Third-party
+    'djcelery',
     'social_auth',
     'south',
 )
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+
+# Celery settings
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+CELERY_RESULT_BACKEND = 'redis://{0}:{1}'.format(REDIS_HOST, REDIS_PORT)
+BROKER_URL = CELERY_RESULT_BACKEND
+
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.contrib.github.GithubBackend',
