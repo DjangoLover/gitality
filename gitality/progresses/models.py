@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from annoying.fields import AutoOneToOneField
+from dirtyfields import DirtyFieldsMixin
 from south.modelsinspector import add_introspection_rules
 
 from core.models import TimeStampedModel
@@ -9,7 +10,7 @@ from core.models import TimeStampedModel
 add_introspection_rules([], ['^annoying\.fields\.AutoOneToOneField'])
 
 
-class CommonProgressModel(TimeStampedModel):
+class CommonProgressModel(DirtyFieldsMixin, TimeStampedModel):
     """
     Holds common set of fields
     required for all progress states.
@@ -26,6 +27,13 @@ class CommonProgressModel(TimeStampedModel):
 
     def check_requirement(self, key, value):
         return getattr(self, key) >= value
+
+    def get_dirty_fields_with_new_values(self):
+        """
+        Returns a dictionary of
+        dirty fields with new values.
+        """
+        return {f: getattr(self, f) for f in self.get_dirty_fields()}
 
 
 class AuthorProgress(CommonProgressModel):
